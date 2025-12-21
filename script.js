@@ -1,19 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
-                observer.unobserve(entry.target); // 一度表示したら監視を終了
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    const fadeElements = document.querySelectorAll(".fade-in");
-    fadeElements.forEach(el => observer.observe(el));
+    document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 });
