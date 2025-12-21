@@ -11,88 +11,115 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-inner">
-            <h1 class="logo">
-                <img src="logo.png" alt="TOHO HOUSE NEXT">
-            </h1>
-            <nav class="nav">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">
+                    <img src="logo.png" alt="TOHO HOUSE NEXT">
+                </h1>
+            </div>
+
+            <nav class="sidebar-nav">
                 <ul>
+                    <li><a href="#top">TOP</a></li>
+                    
+                    <li class="has-submenu">
+                        <a href="#developed" class="menu-label">開発実績 <span class="arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="#system-a">顧客管理システム (CRM)</a></li>
+                            <li><a href="#system-b">物件検索アプリ</a></li>
+                            <li><a href="#system-c">社内ポータル</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="#future" class="menu-label">開発予定 <span class="arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="#plan-2025">2025年ロードマップ</a></li>
+                            <li><a href="#ai-project">AI査定プロジェクト</a></li>
+                            <li><a href="#infra">クラウド移行計画</a></li>
+                        </ul>
+                    </li>
+
                     <li><a href="#mission">MISSION</a></li>
-                    <li><a href="#service">SERVICE</a></li>
                     <li><a href="#news">NEWS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content fade-in">
-            <p class="tagline">「住まい」のもっと先へ。<br>テクノロジーで未来をつなぐ。</p>
-            <h2 class="hero-title">SYSTEM DEPARTMENT</h2>
-        </div>
-    </section>
-
-    <section id="mission" class="section bg-gray">
-        <div class="container fade-in">
-            <h3 class="section-title">MISSION</h3>
-            <p class="section-desc">私たちシステム課の使命</p>
-            <div class="content-box">
-                <p>不動産の新たな価値を創造するために。<br>
-                私たちは最新のテクノロジーを活用し、社内の業務効率化からお客様へのサービス向上まで、<br>
-                「住まい」の未来をシステム面から支え続けます。</p>
+            <div class="sidebar-footer">
+                <p>&copy; TOHO HOUSE NEXT</p>
             </div>
-        </div>
-    </section>
+        </aside>
 
-    <section id="service" class="section">
-        <div class="container fade-in">
-            <h3 class="section-title">SERVICE</h3>
-            <p class="section-desc">主な業務領域</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h4>インフラ整備</h4>
-                    <p>安定したネットワークとセキュリティ環境を構築し、業務の基盤を支えます。</p>
+        <main class="main-content">
+            
+            <section id="top" class="hero">
+                <div class="hero-content fade-in">
+                    <p class="tagline">「住まい」のもっと先へ。<br>テクノロジーで未来をつなぐ。</p>
+                    <h2 class="hero-title">SYSTEM DEPARTMENT</h2>
                 </div>
-                <div class="service-card">
-                    <h4>DX推進</h4>
-                    <p>デジタル技術を活用し、既存業務の変革と新たな顧客体験を創出します。</p>
-                </div>
-                <div class="service-card">
-                    <h4>ヘルプデスク</h4>
-                    <p>社員のITに関する困りごとを解決し、円滑な業務遂行をサポートします。</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="news" class="section bg-gray">
-        <div class="container fade-in">
-            <h3 class="section-title">NEWS</h3>
-            <ul class="news-list">
-                <li>
-                    <span class="date">2025.12.21</span>
-                    <span class="category">お知らせ</span>
-                    <a href="#">システム課のホームページを開設しました。</a>
-                </li>
-                <li>
-                    <span class="date">2025.12.01</span>
-                    <span class="category">アップデート</span>
-                    <a href="#">社内システムのメンテナンスについて</a>
-                </li>
-            </ul>
-        </div>
-    </section>
+            <section id="developed" class="section">
+                <div class="container fade-in">
+                    <h3 class="section-title">DEVELOPED SYSTEMS</h3>
+                    <p class="section-desc">これまでに開発・運用しているシステム</p>
+                    
+                    <div class="systems-grid">
+                        <div class="system-card" id="system-a">
+                            <div class="card-icon">💻</div>
+                            <h4>顧客管理システム (CRM)</h4>
+                            <p>営業活動を効率化し、顧客との関係値を最大化するための基幹システム。</p>
+                        </div>
+                        <div class="system-card" id="system-b">
+                            <div class="card-icon">📱</div>
+                            <h4>物件検索アプリ</h4>
+                            <p>エンドユーザー様向けの直感的なUIを備えた物件検索アプリケーション。</p>
+                        </div>
+                        <div class="system-card" id="system-c">
+                            <div class="card-icon">🏢</div>
+                            <h4>社内ポータル</h4>
+                            <p>申請業務や情報共有を一元管理する社内プラットフォーム。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <img src="logo.png" alt="TOHO HOUSE NEXT">
-            </div>
-            <p class="copyright">&copy; TOHO HOUSE NEXT All Rights Reserved.</p>
-        </div>
-    </footer>
+            <section id="future" class="section bg-gray">
+                <div class="container fade-in">
+                    <h3 class="section-title">FUTURE DEVELOPMENT</h3>
+                    <p class="section-desc">これから開発予定のプロジェクト</p>
+                    
+                    <div class="roadmap-box">
+                        <div class="roadmap-item" id="plan-2025">
+                            <span class="roadmap-date">2025.Q1</span>
+                            <h4>クラウドインフラの刷新</h4>
+                            <p>AWSを活用したスケーラブルな環境への完全移行。</p>
+                        </div>
+                        <div class="roadmap-item" id="ai-project">
+                            <span class="roadmap-date">2025.Q3</span>
+                            <h4>AI不動産査定システム</h4>
+                            <p>ビッグデータを活用した高精度な価格査定エンジンの開発。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="news" class="section">
+                <div class="container fade-in">
+                    <h3 class="section-title">NEWS</h3>
+                    <ul class="news-list">
+                        <li>
+                            <span class="date">2025.12.21</span>
+                            <span class="category">お知らせ</span>
+                            <a href="#">システム課ポートフォリオサイトを公開しました。</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
