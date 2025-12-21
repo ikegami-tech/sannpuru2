@@ -1,9 +1,10 @@
+/* --- 変数定義 --- */
 :root {
     --primary-color: #003366; /* TOHO NAVY */
-    --accent-color: #0055aa;
+    --accent-color: #00aaff; /* 明るいスカイブルー（アクセント） */
     --text-color: #333;
-    --bg-gray: #f9f9f9;
-    --sidebar-width: 260px; /* サイドバーの幅 */
+    --bg-gray: #f4f8fb; /* 少し青みがかった明るいグレー */
+    --sidebar-width: 260px;
     --font-base: 'Noto Sans JP', sans-serif;
 }
 
@@ -23,10 +24,10 @@ ul { list-style: none; padding: 0; margin: 0; }
     min-height: 100vh;
 }
 
-/* --- 左側サイドバー設定 --- */
+/* --- 左側サイドバー --- */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: var(--primary-color); /* 紺色背景 */
+    background: linear-gradient(180deg, #003366 0%, #001f3f 100%); /* グラデーションで深みを出す */
     color: #fff;
     position: fixed;
     top: 0;
@@ -36,12 +37,12 @@ ul { list-style: none; padding: 0; margin: 0; }
     flex-direction: column;
     justify-content: space-between;
     z-index: 1000;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.15);
 }
 
 .sidebar-header {
     padding: 30px 20px;
-    background: #fff; /* ロゴ背景は白にする */
+    background: #fff;
     text-align: center;
 }
 
@@ -51,168 +52,212 @@ ul { list-style: none; padding: 0; margin: 0; }
     display: block;
 }
 
-/* メニュー部分 */
-.sidebar-nav {
-    flex-grow: 1;
-    padding: 20px 0;
-}
+/* メニュー */
+.sidebar-nav { flex-grow: 1; padding: 20px 0; }
 
 .sidebar-nav > ul > li {
-    position: relative; /* 子メニューの基準位置 */
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .sidebar-nav a {
     display: block;
-    padding: 15px 25px;
+    padding: 16px 25px;
     color: #fff;
     font-size: 0.95rem;
     font-weight: 500;
+    letter-spacing: 0.05em;
     position: relative;
 }
 
+/* ホバー時の明るい演出 */
 .sidebar-nav a:hover {
-    background-color: var(--accent-color);
-    padding-left: 35px; /* ホバーで少し右に動く */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color); /* 文字をスカイブルーに */
+    padding-left: 30px;
 }
 
-/* 矢印アイコン */
 .arrow {
     font-size: 0.7rem;
     float: right;
     margin-top: 4px;
     opacity: 0.7;
+    transition: transform 0.3s;
 }
+.sidebar-nav a:hover .arrow { transform: translateX(5px); }
 
-/* --- サブメニュー（派生メニュー） --- */
+/* サブメニュー（派生） */
 .submenu {
     position: absolute;
     top: 0;
-    left: 100%; /* 親メニューの右側に配置 */
-    width: 220px;
+    left: 100%;
+    width: 240px;
     background-color: #fff;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-10px);
+    transform: translateX(-15px);
     transition: all 0.3s ease;
     border-left: 4px solid var(--accent-color);
 }
 
-.submenu li {
-    border-bottom: 1px solid #eee;
-}
+.submenu li { border-bottom: 1px solid #f0f0f0; }
 
 .submenu a {
-    color: var(--primary-color); /* サブメニューの文字は紺色 */
-    padding: 12px 20px;
+    color: var(--primary-color);
+    padding: 14px 20px;
     font-size: 0.9rem;
 }
 
 .submenu a:hover {
-    background-color: #f0f4f8;
-    color: var(--accent-color);
+    background-color: #eef7ff; /* 薄い青背景 */
+    color: var(--primary-color);
     padding-left: 25px;
 }
 
-/* ホバー時にサブメニューを表示 */
 .has-submenu:hover .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
 
-/* サイドバーフッター */
 .sidebar-footer {
     padding: 20px;
     font-size: 0.7rem;
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 /* --- 右側メインコンテンツ --- */
 .main-content {
-    margin-left: var(--sidebar-width); /* サイドバーの分だけ空ける */
+    margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
-    background-color: #fff;
 }
 
-/* メインビジュアル */
+/* === メインビジュアル（ここを大幅変更） === */
 .hero {
-    height: 60vh; /* 少し高さを抑える */
-    background: linear-gradient(135deg, #eef2f3 0%, #ffffff 100%);
+    height: 70vh; /* 写真を見せるため少し高さを出す */
+    position: relative;
+    /* 背景画像：Unsplashから新宿っぽい高層ビルと青空の写真を借用（後で差し替え可能） */
+    background-image: url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center bottom;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 40px;
+    color: #fff; /* 文字を白に */
 }
 
-.hero-title {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin: 0;
-    letter-spacing: 0.1em;
+/* 写真の上に重ねるフィルター（文字を見やすくする） */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* 青系のグラデーションを薄くかける */
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.3) 0%, rgba(0, 170, 255, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* フィルターの上に文字を表示 */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3); /* 文字に影をつけて視認性アップ */
 }
 
 .tagline {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #555;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
 }
 
-/* コンテンツ共通 */
-.section {
-    padding: 80px 40px;
+.hero-title {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+    font-weight: 800;
 }
+
+/* セクション設定 */
+.section { padding: 90px 50px; }
 .bg-gray { background-color: var(--bg-gray); }
-.container { max-width: 900px; margin: 0 auto; }
+
+.container { max-width: 1000px; margin: 0 auto; }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
+    text-align: center;
     margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.section-desc { margin-bottom: 50px; color: #666; }
 
-/* グリッドレイアウト（開発実績用） */
+/* タイトルの下の装飾線 */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color); /* スカイブルーの線 */
+    margin: 15px auto 0;
+}
+
+.section-desc {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #666;
+}
+
+/* カードデザイン（明るく） */
 .systems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .system-card {
-    border: 1px solid #eee;
-    padding: 30px;
-    border-radius: 8px;
-    transition: transform 0.3s;
     background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* 影を柔らかく */
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s;
 }
-.system-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.card-icon { font-size: 2rem; margin-bottom: 15px; }
 
-/* ロードマップ（開発予定用） */
+.system-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.card-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* ロードマップ */
 .roadmap-item {
     background: #fff;
-    padding: 20px 30px;
-    margin-bottom: 20px;
-    border-left: 5px solid var(--primary-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 25px 35px;
+    margin-bottom: 25px;
+    border-left: 6px solid var(--accent-color); /* スカイブルー */
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
+
 .roadmap-date {
-    font-weight: bold;
     color: var(--accent-color);
+    font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    font-family: monospace;
+    font-size: 1.1rem;
 }
 
 /* ニュース */
 .news-list li {
     padding: 15px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 /* アニメーション */
