@@ -130,6 +130,8 @@ ul { list-style: none; padding: 0; margin: 0; }
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
+    background: linear-gradient(to bottom, #f4f8fb 0%, #ffffff 100%); /* 上から下への薄いグラデーション */
+    min-height: 100vh; /* コンテンツが少なくても画面下まで背景を伸ばす */
 }
 
 /* --- タブ切り替え制御（修正版） --- */
