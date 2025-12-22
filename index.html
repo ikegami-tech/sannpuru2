@@ -23,26 +23,11 @@
                 <ul>
                     <li><a href="#top">TOP</a></li>
                     
-                    <li class="has-submenu">
-                        <a href="#developed" class="menu-label">開発実績 <span class="arrow">▶</span></a>
-                        <ul class="submenu">
-                            <li><a href="#system-a">顧客管理システム (CRM)</a></li>
-                            <li><a href="#system-b">物件検索アプリ</a></li>
-                            <li><a href="#system-c">社内ポータル</a></li>
-                        </ul>
+                    <li>
+                        <a href="#solutions" class="menu-label">解決事例 <span class="arrow">▶</span></a>
                     </li>
 
-                    <li class="has-submenu">
-                        <a href="#future" class="menu-label">開発予定 <span class="arrow">▶</span></a>
-                        <ul class="submenu">
-                            <li><a href="#plan-2025">2025年ロードマップ</a></li>
-                            <li><a href="#ai-project">AI査定プロジェクト</a></li>
-                            <li><a href="#infra">クラウド移行計画</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#mission">MISSION</a></li>
-                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#contact">相談・問い合わせ</a></li>
                 </ul>
             </nav>
 
@@ -52,73 +37,89 @@
         </aside>
 
         <main class="main-content">
+    
+    <section id="top" class="hero">
+        <div class="hero-content fade-in">
+            <p class="tagline">TOHO HOUSE NEXT SYSTEM DEPT.</p>
+            <h2 class="hero-title">IT SOLUTION PORTFOLIO</h2>
+            <p style="margin-top:20px; font-size:1.1rem; font-weight:500;">
+                その「手間」な作業、システムで解決できるかもしれません。<br>
+                私たちが開発した業務改善の事例をご覧ください。
+            </p>
+        </div>
+    </section>
+
+    <section id="solutions" class="section">
+        <div class="container fade-in">
+            <h3 class="section-title">CASE STUDIES</h3>
+            <p class="section-desc">過去の開発事例と導入効果</p>
             
-            <section id="top" class="hero">
-                <div class="hero-content fade-in">
-                    <p class="tagline">「住まい」のもっと先へ。<br>テクノロジーで未来をつなぐ。</p>
-                    <h2 class="hero-title">SYSTEM DEPARTMENT</h2>
-                </div>
-            </section>
+            <div class="solution-list">
 
-            <section id="developed" class="section">
-                <div class="container fade-in">
-                    <h3 class="section-title">DEVELOPED SYSTEMS</h3>
-                    <p class="section-desc">これまでに開発・運用しているシステム</p>
-                    
-                    <div class="systems-grid">
-                        <div class="system-card" id="system-a">
-                            <div class="card-icon">💻</div>
-                            <h4>顧客管理システム (CRM)</h4>
-                            <p>営業活動を効率化し、顧客との関係値を最大化するための基幹システム。</p>
+                <article class="solution-card">
+                    <div class="solution-img">
+                        <div class="img-placeholder">💻 顧客管理画面</div>
+                    </div>
+                    <div class="solution-content">
+                        <div class="solution-category">営業効率化</div>
+                        <h4 class="solution-title">顧客追客の自動メール配信システム</h4>
+                        
+                        <div class="problem-box">
+                            <span class="label-problem">課題</span>
+                            <p>営業担当が毎日手動で数百件のお客様へメールを送っており、送信漏れや残業の原因になっていた。</p>
                         </div>
-                        <div class="system-card" id="system-b">
-                            <div class="card-icon">📱</div>
-                            <h4>物件検索アプリ</h4>
-                            <p>エンドユーザー様向けの直感的なUIを備えた物件検索アプリケーション。</p>
+                        
+                        <div class="result-box">
+                            <span class="label-result">解決</span>
+                            <p>条件に合ったお客様へ自動でメールを配信。<strong>1日あたり約1時間の作業時間を削減</strong>し、アポ率も向上。</p>
                         </div>
-                        <div class="system-card" id="system-c">
-                            <div class="card-icon">🏢</div>
-                            <h4>社内ポータル</h4>
-                            <p>申請業務や情報共有を一元管理する社内プラットフォーム。</p>
+                        
+                        <div class="card-footer">
+                            <span class="system-name">System: TH-CRM v2.0</span>
                         </div>
                     </div>
-                </div>
-            </section>
+                </article>
 
-            <section id="future" class="section bg-gray">
-                <div class="container fade-in">
-                    <h3 class="section-title">FUTURE DEVELOPMENT</h3>
-                    <p class="section-desc">これから開発予定のプロジェクト</p>
-                    
-                    <div class="roadmap-box">
-                        <div class="roadmap-item" id="plan-2025">
-                            <span class="roadmap-date">2025.Q1</span>
-                            <h4>クラウドインフラの刷新</h4>
-                            <p>AWSを活用したスケーラブルな環境への完全移行。</p>
+                <article class="solution-card">
+                    <div class="solution-img">
+                        <div class="img-placeholder">📄 電子申請画面</div>
+                    </div>
+                    <div class="solution-content">
+                        <div class="solution-category">ペーパーレス</div>
+                        <h4 class="solution-title">社内稟議・経費精算の完全デジタル化</h4>
+                        
+                        <div class="problem-box">
+                            <span class="label-problem">課題</span>
+                            <p>紙の申請書にハンコをもらうために出社する必要があり、承認までのリードタイムが長かった。</p>
                         </div>
-                        <div class="roadmap-item" id="ai-project">
-                            <span class="roadmap-date">2025.Q3</span>
-                            <h4>AI不動産査定システム</h4>
-                            <p>ビッグデータを活用した高精度な価格査定エンジンの開発。</p>
+                        
+                        <div class="result-box">
+                            <span class="label-result">解決</span>
+                            <p>スマホから申請・承認が可能に。<strong>承認スピードが平均3日から数時間に短縮</strong>。完全ペーパーレスを実現。</p>
+                        </div>
+
+                        <div class="card-footer">
+                            <span class="system-name">System: Internal Portal</span>
                         </div>
                     </div>
-                </div>
-            </section>
+                </article>
 
-            <section id="news" class="section">
-                <div class="container fade-in">
-                    <h3 class="section-title">NEWS</h3>
-                    <ul class="news-list">
-                        <li>
-                            <span class="date">2025.12.21</span>
-                            <span class="category">お知らせ</span>
-                            <a href="#">システム課ポートフォリオサイトを公開しました。</a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-        </main>
+    <section id="contact" class="section bg-blue">
+        <div class="container fade-in text-center">
+            <h3 class="contact-title">あなたの業務の「非効率」教えてください</h3>
+            <p class="contact-text">
+                「Excelのコピペ作業をなくしたい」「外出先からFAXを見たい」など、<br>
+                どんな些細なことでも構いません。システム課が解決策を提案します。
+            </p>
+            <a href="mailto:system@example.com" class="btn-contact">システム課へ相談する</a>
+        </div>
+    </section>
+
+</main>
     </div>
 
     <script src="script.js"></script>
