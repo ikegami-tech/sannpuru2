@@ -145,20 +145,30 @@ ul { list-style: none; padding: 0; margin: 0; }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- メインビジュアル（ここを修正しました） --- */
+/* --- メインビジュアル（中央寄せ修正版） --- */
 .hero {
-    height: 100vh; /* ▼修正：画面いっぱいの高さにする */
+    /* 1. 高さを画面いっぱいにする */
+    height: 100vh;
+    min-height: 600px; /* 画面が小さすぎてもこれ以上は縮まないようにする */
+    
+    /* 2. 背景画像の設定 */
     position: relative;
     background-image: url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;
     background-position: center bottom;
+    
+    /* 3. ▼ここが重要：中身を「上下左右のど真ん中」に配置する魔法のコード */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column;  /* 中身を縦並びにする */
+    justify-content: center; /* 縦方向の真ん中 */
+    align-items: center;     /* 横方向の真ん中 */
+    
+    /* 4. 文字の設定 */
+    text-align: center;      /* 文章自体も中央揃え */
     color: #fff;
 }
 
+/* フィルター（画像の上にかける青い膜） */
 .hero::before {
     content: '';
     position: absolute;
@@ -167,12 +177,19 @@ ul { list-style: none; padding: 0; margin: 0; }
     z-index: 1;
 }
 
+/* 文字エリアの調整 */
 .hero-content {
     position: relative;
     z-index: 2;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    
+    /* 横幅が広がりすぎないように制限 */
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px; /* スマホで端が切れないように */
 }
 
+/* 以下は変更なし（そのまま残してください） */
 .tagline {
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -186,7 +203,6 @@ ul { list-style: none; padding: 0; margin: 0; }
     letter-spacing: 0.1em;
     font-weight: 800;
 }
-
 /* --- セクション共通設定 --- */
 .section { padding: 90px 40px; }
 .bg-gray { background-color: var(--bg-gray); }
