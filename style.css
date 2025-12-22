@@ -267,3 +267,48 @@ ul { list-style: none; padding: 0; margin: 0; }
     transition: opacity 0.8s, transform 0.8s;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* 電話誘導用のスタイル */
+.phone-box {
+    background: rgba(255, 255, 255, 0.1); /* 背景を少し白く透けさせる */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    padding: 30px 60px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.phone-label {
+    font-size: 1rem;
+    color: #aaccff; /* 薄い水色 */
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.phone-number {
+    font-size: 3.5rem; /* とにかく大きく！ */
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.phone-number .icon {
+    font-size: 2.5rem;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.phone-sub {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin: 0;
+}
+
+/* スマホで見るときは少し文字を小さく */
+@media (max-width: 768px) {
+    .phone-box { padding: 20px; width: 80%; }
+    .phone-number { font-size: 2.5rem; }
+}
