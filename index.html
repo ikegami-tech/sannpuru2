@@ -47,74 +47,122 @@
             
             <section id="released" class="section active">
                 <div class="container">
-                    <div class="section-header">
-                        <span class="section-subtitle">RELEASED</span>
-                        <h3 class="section-title">稼働中のシステム</h3>
-                        <p class="section-desc">すでに現場導入済みで、業務改善効果が出ている事例です。</p>
-                    </div>
                     
-                    <div class="solution-list">
-                        <article class="solution-card">
-                            <div class="solution-img">
-                                <span class="status-badge active">稼働中</span>
-                                <div class="img-placeholder">💻 顧客管理画面</div>
-                            </div>
-                            <div class="solution-content">
-                                <div class="solution-category">営業効率化</div>
-                                <h4 class="solution-title">顧客追客の自動メール配信システム</h4>
-                                <div class="problem-box">
-                                    <span class="label-problem">Before</span>
-                                    <p>営業担当の手動送信による負担と、送信漏れのリスクがあった。</p>
+                    <div id="release-list-view">
+                        <div class="section-header">
+                            <span class="section-subtitle">RELEASED</span>
+                            <h3 class="section-title">稼働中のシステム</h3>
+                            <p class="section-desc">詳細を見たいシステムをクリックしてください。</p>
+                        </div>
+                        
+                        <div class="solution-list">
+                            <article class="solution-card hover-action" onclick="openDetail('detail-mail')">
+                                <div class="solution-img">
+                                    <span class="status-badge active">稼働中</span>
+                                    <div class="img-placeholder">💻 顧客管理画面</div>
                                 </div>
-                                <div class="result-box">
-                                    <span class="label-result">After</span>
-                                    <p>自動配信により<strong>1日1時間の作業削減</strong>。アポ率も向上。</p>
+                                <div class="solution-content">
+                                    <div class="solution-category">営業効率化</div>
+                                    <h4 class="solution-title">顧客追客の自動メール配信システム</h4>
+                                    <div class="problem-box">
+                                        <span class="label-problem">Before</span>
+                                        <p>営業担当の手動送信による負担と、送信漏れのリスクがあった。</p>
+                                    </div>
+                                    <div class="result-box">
+                                        <span class="label-result">After</span>
+                                        <p>自動配信により1日1時間の作業削減。アポ率も向上。</p>
+                                    </div>
+                                    <p class="click-hint">👉 クリックして詳細を見る</p>
                                 </div>
-                            </div>
-                        </article>
+                            </article>
 
-                        <article class="solution-card">
-                            <div class="solution-img">
-                                <span class="status-badge active">稼働中</span>
-                                <div class="img-placeholder">📄 電子申請画面</div>
-                            </div>
-                            <div class="solution-content">
-                                <div class="solution-category">ペーパーレス</div>
-                                <h4 class="solution-title">社内稟議・経費精算ポータル</h4>
-                                <div class="problem-box">
-                                    <span class="label-problem">Before</span>
-                                    <p>承認ハンコをもらうための出社や、紙の管理が手間だった。</p>
+                            <article class="solution-card">
+                                <div class="solution-img">
+                                    <span class="status-badge active">稼働中</span>
+                                    <div class="img-placeholder">📄 電子申請画面</div>
                                 </div>
-                                <div class="result-box">
-                                    <span class="label-result">After</span>
-                                    <p>スマホ承認で<strong>リードタイムを3日から数時間に短縮</strong>。</p>
+                                <div class="solution-content">
+                                    <div class="solution-category">ペーパーレス</div>
+                                    <h4 class="solution-title">社内稟議・経費精算ポータル</h4>
+                                    <div class="problem-box">
+                                        <span class="label-problem">Before</span>
+                                        <p>承認ハンコをもらうための出社や、紙の管理が手間だった。</p>
+                                    </div>
+                                    <div class="result-box">
+                                        <span class="label-result">After</span>
+                                        <p>スマホ承認でリードタイムを3日から数時間に短縮。</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
+                            </article>
 
-                        <article class="solution-card">
-                            <div class="solution-img">
-                                <span class="status-badge" style="background:#666;">社内活用例</span>
-                                <div class="img-placeholder">📊 日報システムの画面</div>
-                            </div>
-                            <div class="solution-content">
-                                <div class="solution-category">業務効率化モデル</div>
-                                <h4 class="solution-title">スマホで完結！工数管理・日報システム</h4>
-                                <div class="problem-box">
-                                    <span class="label-problem">Before</span>
-                                    <p>「何に何時間使ったか」の集計が手作業で、正確なコスト管理ができていなかった。</p>
+                            <article class="solution-card">
+                                <div class="solution-img">
+                                    <span class="status-badge" style="background:#666;">社内活用例</span>
+                                    <div class="img-placeholder">📊 日報システムの画面</div>
                                 </div>
-                                <div class="result-box">
-                                    <span class="label-result">After</span>
-                                    <p>スマホでポチポチ入力するだけ。月次レポートも自動生成され、<strong>集計作業がゼロ</strong>に。</p>
+                                <div class="solution-content">
+                                    <div class="solution-category">業務効率化モデル</div>
+                                    <h4 class="solution-title">スマホで完結！工数管理・日報システム</h4>
+                                    <div class="problem-box">
+                                        <span class="label-problem">Before</span>
+                                        <p>集計が手作業で、正確なコスト管理ができていなかった。</p>
+                                    </div>
+                                    <div class="result-box">
+                                        <span class="label-result">After</span>
+                                        <p>スマホ入力で集計作業ゼロに。</p>
+                                    </div>
+                                    <div class="card-footer" style="margin-top:15px; padding-top:10px; border-top:1px dashed #ddd; font-size:0.9rem; color:#0055aa; font-weight:bold;">
+                                        💡 営業日報や工事報告書用にカスタマイズ可能です！
+                                    </div>
                                 </div>
-                                <div class="card-footer" style="margin-top:15px; padding-top:10px; border-top:1px dashed #ddd; font-size:0.9rem; color:#0055aa; font-weight:bold;">
-                                    💡 営業日報や工事報告書用にカスタマイズ可能です！
-                                </div>
-                            </div>
-                        </article>
+                            </article>
+                        </div>
                     </div>
-                </div>
+                    <div id="detail-mail" class="detail-view" style="display: none;">
+                        
+                        <button class="back-btn" onclick="closeDetail()">
+                            ◀ 一覧に戻る
+                        </button>
+
+                        <div class="detail-header">
+                            <span class="detail-category">営業効率化</span>
+                            <h2 class="detail-title">顧客追客の自動メール配信システム</h2>
+                            <div class="detail-meta">
+                                <span>開発期間：約3ヶ月</span>
+                                <span>使用技術：Python / AWS</span>
+                            </div>
+                        </div>
+
+                        <div class="detail-body">
+                            <div class="detail-main-img">
+                                <div class="img-placeholder-large">💻 実際のシステム画面キャプチャ</div>
+                            </div>
+
+                            <h3>開発の背景</h3>
+                            <p>
+                                営業担当者一人あたり100名以上の顧客を担当しており、日々の追客メール送信だけで1〜2時間を費やしていました。<br>
+                                また、送信漏れによる機会損失も課題となっていました。
+                            </p>
+
+                            <h3>主な機能</h3>
+                            <ul class="feature-list">
+                                <li><strong>自動ステップメール：</strong> お客様のステータスに合わせて最適なメールを自動送信</li>
+                                <li><strong>開封通知機能：</strong> お客様がメールを開いた瞬間に営業担当へ通知</li>
+                                <li><strong>テンプレート管理：</strong> 成約率の高い文面を社内で共有可能</li>
+                            </ul>
+
+                            <h3>導入効果</h3>
+                            <div class="effect-box">
+                                <p>📧 送信作業時間：<strong>90%削減</strong></p>
+                                <p>📈 アポイント獲得率：<strong>1.5倍に向上</strong></p>
+                            </div>
+                        </div>
+
+                        <div style="text-align:center; margin-top:50px;">
+                            <button class="back-btn" onclick="closeDetail()">一覧に戻る</button>
+                        </div>
+                    </div>
+                    </div>
             </section>
 
             <section id="developing" class="section bg-gray">
