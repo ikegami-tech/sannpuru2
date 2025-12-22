@@ -24,7 +24,10 @@
                     <li><a href="#top">TOP</a></li>
                     
                     <li>
-                        <a href="#solutions" class="menu-label">解決事例 <span class="arrow">▶</span></a>
+                        <a href="#released">稼働中のシステム</a>
+                    </li>
+                    <li>
+                        <a href="#developing">開発中のプロジェクト</a>
                     </li>
 
                     <li><a href="#contact">相談・問い合わせ</a></li>
@@ -49,15 +52,18 @@
         </div>
     </section>
 
-    <section id="solutions" class="section">
+    <section id="released" class="section">
         <div class="container fade-in">
-            <h3 class="section-title">CASE STUDIES</h3>
-            <p class="section-desc">過去の開発事例と導入効果</p>
+            <div class="section-header">
+                <span class="section-subtitle">RELEASED</span>
+                <h3 class="section-title">稼働中のシステム</h3>
+                <p class="section-desc">すでに現場導入済みで、業務改善効果が出ている事例です。</p>
+            </div>
             
             <div class="solution-list">
-
                 <article class="solution-card">
                     <div class="solution-img">
+                        <span class="status-badge active">稼働中</span>
                         <div class="img-placeholder">💻 顧客管理画面</div>
                     </div>
                     <div class="solution-content">
@@ -65,65 +71,87 @@
                         <h4 class="solution-title">顧客追客の自動メール配信システム</h4>
                         
                         <div class="problem-box">
-                            <span class="label-problem">課題</span>
-                            <p>営業担当が毎日手動で数百件のお客様へメールを送っており、送信漏れや残業の原因になっていた。</p>
+                            <span class="label-problem">Before</span>
+                            <p>営業担当の手動送信による負担と、送信漏れのリスクがあった。</p>
                         </div>
-                        
                         <div class="result-box">
-                            <span class="label-result">解決</span>
-                            <p>条件に合ったお客様へ自動でメールを配信。<strong>1日あたり約1時間の作業時間を削減</strong>し、アポ率も向上。</p>
-                        </div>
-                        
-                        <div class="card-footer">
-                            <span class="system-name">System: TH-CRM v2.0</span>
+                            <span class="label-result">After</span>
+                            <p>自動配信により<strong>1日1時間の作業削減</strong>。アポ率も向上。</p>
                         </div>
                     </div>
                 </article>
 
                 <article class="solution-card">
                     <div class="solution-img">
+                        <span class="status-badge active">稼働中</span>
                         <div class="img-placeholder">📄 電子申請画面</div>
                     </div>
                     <div class="solution-content">
                         <div class="solution-category">ペーパーレス</div>
-                        <h4 class="solution-title">社内稟議・経費精算の完全デジタル化</h4>
+                        <h4 class="solution-title">社内稟議・経費精算ポータル</h4>
                         
                         <div class="problem-box">
-                            <span class="label-problem">課題</span>
-                            <p>紙の申請書にハンコをもらうために出社する必要があり、承認までのリードタイムが長かった。</p>
+                            <span class="label-problem">Before</span>
+                            <p>承認ハンコをもらうための出社や、紙の管理が手間だった。</p>
                         </div>
-                        
                         <div class="result-box">
-                            <span class="label-result">解決</span>
-                            <p>スマホから申請・承認が可能に。<strong>承認スピードが平均3日から数時間に短縮</strong>。完全ペーパーレスを実現。</p>
-                        </div>
-
-                        <div class="card-footer">
-                            <span class="system-name">System: Internal Portal</span>
+                            <span class="label-result">After</span>
+                            <p>スマホ承認で<strong>リードタイムを3日から数時間に短縮</strong>。</p>
                         </div>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section bg-blue">
-        <div class="container fade-in text-center">
-            <h3 class="contact-title">システムに関するご相談はこちら</h3>
-            <p class="contact-text">
-                「この作業を自動化したい」「PCの調子が悪い」など、<br>
-                お困りの際はシステム課までお気軽にお電話ください。
-            </p>
-            
-            <div class="phone-box">
-                <p class="phone-label">社内内線 / 直通</p>
-                <div class="phone-number">
-                    <span class="icon">📞</span> 1234
-                </div>
-                <p class="phone-sub">（担当：システム課 〇〇 / 受付 9:00〜18:00）</p>
+    <section id="developing" class="section bg-gray">
+        <div class="container fade-in">
+            <div class="section-header">
+                <span class="section-subtitle">IN DEVELOPMENT</span>
+                <h3 class="section-title">現在開発中のプロジェクト</h3>
+                <p class="section-desc">現場からのヒアリングをもとに、鋭意制作中のシステムです。</p>
             </div>
 
+            <div class="solution-list">
+                <article class="solution-card dev-card">
+                    <div class="solution-img">
+                        <span class="status-badge developing">開発中</span>
+                        <div class="img-placeholder">🚧 開発中の画面イメージ</div>
+                    </div>
+                    <div class="solution-content">
+                        <div class="solution-category">AI活用</div>
+                        <h4 class="solution-title">AI不動産査定エンジン</h4>
+                        
+                        <div class="problem-box">
+                            <span class="label-problem">課題</span>
+                            <p>査定書の作成に毎回30分以上かかっており、お客様をお待たせしてしまう。</p>
+                        </div>
+                        <div class="dev-box">
+                            <span class="label-dev">開発の狙い</span>
+                            <p>過去データをAIが解析し、<strong>ワンクリックで査定額を算出</strong>する機能を実装予定。</p>
+                        </div>
+                        <div class="release-info">
+                            📅 2025年 夏 リリース予定
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-simple">
+        <div class="container fade-in">
+            <div class="contact-inner">
+                <div class="contact-message">
+                    <h4>システムに関するご相談・不具合連絡</h4>
+                    <p>「PCの調子が悪い」「こんな機能が欲しい」など、お困りの際はシステム課までお電話ください。</p>
+                </div>
+                <div class="contact-phone">
+                    <span class="phone-label">社内内線</span>
+                    <span class="phone-number">📞 1234</span>
+                    <span class="phone-name">（担当：システム課）</span>
+                </div>
+            </div>
         </div>
     </section>
 
