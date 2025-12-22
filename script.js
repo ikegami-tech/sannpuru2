@@ -26,18 +26,25 @@ document.addEventListener("DOMContentLoaded", function () {
             if (targetSection) {
                 targetSection.classList.add("active");
                 
-                // (オプション) 画面の一番上までスクロールする
+                // ▼▼▼ 修正：タブを切り替えたら、強制的に「一覧画面」に戻す ▼▼▼
+                if (targetId === 'released') {
+                    closeDetail(); // 詳細を閉じて一覧を表示する関数を呼び出す
+                }
+                
+                // 画面の一番上までスクロールする
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
         });
     });
 });
+
 /* --- 詳細画面の切り替え機能 --- */
 
 // 詳細ページを開く関数
 function openDetail(detailId) {
     // 1. 一覧画面を隠す
-    document.getElementById('release-list-view').style.display = 'none';
+    const listView = document.getElementById('release-list-view');
+    if (listView) listView.style.display = 'none';
     
     // 2. 指定された詳細画面を表示する
     const targetDetail = document.getElementById(detailId);
@@ -57,8 +64,9 @@ function closeDetail() {
     });
 
     // 2. 一覧画面を表示する
-    document.getElementById('release-list-view').style.display = 'block';
+    const listView = document.getElementById('release-list-view');
+    if (listView) listView.style.display = 'block';
     
-    // 画面トップへ
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // ※タブ切り替え時にスクロールさせたくない場合もあるので、
+    // ここではスクロール処理を入れないか、呼び出し元で制御します。
 }
