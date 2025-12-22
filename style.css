@@ -41,10 +41,10 @@ ul { list-style: none; padding: 0; margin: 0; }
     box-shadow: 4px 0 15px rgba(0,0,0,0.15);
 }
 
-/* ▼修正：ロゴ背景を白に戻し、フィルターを削除 */
+/* ロゴエリア */
 .sidebar-header {
     padding: 30px 20px;
-    background: #fff; /* 背景を白にする */
+    background: #fff; /* 背景白 */
     text-align: center;
 }
 
@@ -52,7 +52,6 @@ ul { list-style: none; padding: 0; margin: 0; }
     max-width: 100%;
     height: auto;
     display: block;
-    /* ここにあった不要なフィルター記述を削除しました */
 }
 
 /* メニュー */
@@ -72,10 +71,48 @@ ul { list-style: none; padding: 0; margin: 0; }
     letter-spacing: 0.05em;
 }
 
+/* メニューホバー時 */
 .sidebar-nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--accent-color);
     padding-left: 30px;
+}
+
+/* アクティブ（現在地）のスタイル */
+.sidebar-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--accent-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 21px; /* ボーダー分調整 */
+}
+
+/* サイドバー内の連絡先（控えめ） */
+.sidebar-contact {
+    margin: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sc-label {
+    font-size: 0.75rem;
+    color: #aaccff;
+    margin: 0 0 5px 0;
+}
+
+.sc-number {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.sc-icon {
+    font-size: 0.9rem;
+    margin-right: 5px;
 }
 
 .sidebar-footer {
@@ -87,13 +124,30 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* --- 右側メインコンテンツ --- */
 .main-content {
-    margin-left: var(--sidebar-width); /* サイドバーの分だけ空ける */
+    margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
 }
 
-/* --- メインビジュアル --- */
+/* --- タブ切り替え制御 --- */
+.main-content .section,
+.main-content .hero {
+    display: none; /* 基本は隠す */
+    animation: fadeIn 0.5s ease;
+}
+
+.main-content .section.active,
+.main-content .hero.active {
+    display: block; /* activeがついたら表示 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- メインビジュアル（ここを修正しました） --- */
 .hero {
-    height: 60vh;
+    height: 100vh; /* ▼修正：画面いっぱいの高さにする */
     position: relative;
     background-image: url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;
@@ -249,6 +303,11 @@ ul { list-style: none; padding: 0; margin: 0; }
     color: #444;
 }
 
+/* カードフッター（日報等のカスタマイズ提案用） */
+.card-footer {
+    /* HTML内でスタイル指定していますが、念のためここでも定義可能です */
+}
+
 /* 開発中カードの特別デザイン */
 .dev-card {
     border-left: 5px solid #ff9900;
@@ -262,133 +321,9 @@ ul { list-style: none; padding: 0; margin: 0; }
     font-weight: bold;
 }
 
-/* --- 問い合わせ（控えめシンプル版） --- */
-.contact-simple {
-    border-top: 1px solid #eee;
-    background-color: #fff;
-    padding: 60px 20px;
-}
-
-.contact-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.contact-message h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-}
-.contact-message p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.contact-phone {
-    display: flex;
-    align-items: baseline;
-    gap: 15px;
-    background: #f9f9f9;
-    padding: 15px 30px;
-    border-radius: 50px;
-    border: 1px solid #eee;
-}
-
-.contact-phone .phone-label {
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: #666;
-}
-
-.contact-phone .phone-number {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    font-family: sans-serif;
-}
-
-.contact-phone .phone-name {
-    font-size: 0.8rem;
-    color: #999;
-}
-
-/* アニメーション */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s, transform 0.8s;
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
 /* スマホ対応 */
 @media (max-width: 768px) {
     .solution-card { flex-direction: column; }
     .solution-img { width: 100%; height: 200px; }
     .solution-content { width: 100%; padding: 25px; box-sizing: border-box; }
-    
-    .contact-inner { flex-direction: column; text-align: center; }
-    .contact-phone { flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
-}
-/* --- サイドバー内の連絡先（ほどよい存在感） --- */
-.sidebar-contact {
-    margin: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.1); /* 背景をうっすら透けさせる */
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.sc-label {
-    font-size: 0.75rem;
-    color: #aaccff; /* 薄い水色 */
-    margin: 0 0 5px 0;
-}
-
-.sc-number {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    font-family: sans-serif;
-    letter-spacing: 0.05em;
-}
-
-.sc-icon {
-    font-size: 0.9rem;
-    margin-right: 5px;
-}
-/* --- タブ切り替え用の設定 --- */
-
-/* 1. メインコンテンツ内のセクションを一旦すべて隠す */
-.main-content .section,
-.main-content .hero {
-    display: none;
-    /* 切り替え時にふわっと表示させるアニメーション */
-    animation: fadeIn 0.5s ease;
-}
-
-/* 2. 「active」というクラスがついたものだけ表示する */
-.main-content .section.active,
-.main-content .hero.active {
-    display: block;
-}
-
-/* 3. サイドバーの「現在地」を目立たせる */
-.sidebar-nav a.active {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: var(--accent-color);
-    border-left: 4px solid var(--accent-color);
-    padding-left: 21px; /* ボーダー分調整 */
-}
-
-/* フェードインアニメーションの定義 */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
