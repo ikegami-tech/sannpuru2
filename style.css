@@ -41,10 +41,10 @@ ul { list-style: none; padding: 0; margin: 0; }
     box-shadow: 4px 0 15px rgba(0,0,0,0.15);
 }
 
-/* --- 左側サイドバー（ロゴ設定を元に戻す） --- */
+/* ▼修正：ロゴ背景を白に戻し、フィルターを削除 */
 .sidebar-header {
     padding: 30px 20px;
-    background: #fff; /* 背景を白に戻す */
+    background: #fff; /* 背景を白にする */
     text-align: center;
 }
 
@@ -52,7 +52,8 @@ ul { list-style: none; padding: 0; margin: 0; }
     max-width: 100%;
     height: auto;
     display: block;
-    /* フィルター（filter: invert...）を削除して、元の画像をそのまま表示 */
+    /* ここにあった不要なフィルター記述を削除しました */
+}
 
 /* メニュー */
 .sidebar-nav { flex-grow: 1; padding: 20px 0; }
@@ -86,13 +87,13 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* --- 右側メインコンテンツ --- */
 .main-content {
-    margin-left: var(--sidebar-width);
+    margin-left: var(--sidebar-width); /* サイドバーの分だけ空ける */
     width: calc(100% - var(--sidebar-width));
 }
 
 /* --- メインビジュアル --- */
 .hero {
-    height: 60vh; /* 少し高さを調整 */
+    height: 60vh;
     position: relative;
     background-image: url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;
@@ -137,7 +138,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .bg-gray { background-color: var(--bg-gray); }
 .container { max-width: 1000px; margin: 0 auto; }
 
-/* ▼追加：セクション見出しのデザイン */
+/* セクション見出し */
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -160,11 +161,11 @@ ul { list-style: none; padding: 0; margin: 0; }
     font-size: 0.95rem;
 }
 
-/* --- ▼追加：解決事例リストとカードデザイン --- */
+/* --- 解決事例リストとカードデザイン --- */
 .solution-list {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* カード間の余白 */
+    gap: 50px;
 }
 
 .solution-card {
@@ -184,7 +185,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     align-items: center;
     justify-content: center;
     min-height: 250px;
-    position: relative; /* バッジの基準位置 */
+    position: relative;
 }
 
 .img-placeholder {
@@ -193,7 +194,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     font-size: 1.1rem;
 }
 
-/* ステータスバッジ（稼働中・開発中） */
+/* ステータスバッジ */
 .status-badge {
     position: absolute;
     top: 15px;
@@ -206,8 +207,8 @@ ul { list-style: none; padding: 0; margin: 0; }
     z-index: 10;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-.status-badge.active { background-color: #28a745; } /* 緑 */
-.status-badge.developing { background-color: #ff9900; } /* オレンジ */
+.status-badge.active { background-color: #28a745; }
+.status-badge.developing { background-color: #ff9900; }
 
 /* 右側のテキストエリア */
 .solution-content {
@@ -261,7 +262,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     font-weight: bold;
 }
 
-/* --- ▼追加：問い合わせ（控えめシンプル版） --- */
+/* --- 問い合わせ（控えめシンプル版） --- */
 .contact-simple {
     border-top: 1px solid #eee;
     background-color: #fff;
