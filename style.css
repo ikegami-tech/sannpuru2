@@ -335,3 +335,34 @@ ul { list-style: none; padding: 0; margin: 0; }
     .contact-inner { flex-direction: column; text-align: center; }
     .contact-phone { flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
 }
+/* --- サイドバー内の連絡先（ほどよい存在感） --- */
+.sidebar-contact {
+    margin: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* 背景をうっすら透けさせる */
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sc-label {
+    font-size: 0.75rem;
+    color: #aaccff; /* 薄い水色 */
+    margin: 0 0 5px 0;
+}
+
+.sc-number {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.sc-icon {
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+/* 以前のメインエリアの問い合わせ設定は不要なので削除、
+   または上書きされないようにしておけばOKです */
