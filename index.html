@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOHO HOUSE NEXT システム課</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="favicon.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -21,9 +21,15 @@
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#top">TOP</a></li>
-                    <li><a href="#released">稼働中のシステム</a></li>
-                    <li><a href="#developing">開発中のプロジェクト</a></li>
+                    <li>
+                        <a href="#" class="tab-link active" data-target="top">TOP</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tab-link" data-target="released">稼働中のシステム</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tab-link" data-target="developing">開発中のプロジェクト</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -40,106 +46,125 @@
         </aside>
 
         <main class="main-content">
-    
-    <section id="top" class="hero">
-        <div class="hero-content fade-in">
-            <p class="tagline">TOHO HOUSE NEXT SYSTEM DEPT.</p>
-            <h2 class="hero-title">IT SOLUTION PORTFOLIO</h2>
-            <p style="margin-top:20px; font-size:1.1rem; font-weight:500;">
-                その「手間」な作業、システムで解決できるかもしれません。<br>
-                私たちが開発した業務改善の事例をご覧ください。
-            </p>
-        </div>
-    </section>
-
-    <section id="released" class="section">
-        <div class="container fade-in">
-            <div class="section-header">
-                <span class="section-subtitle">RELEASED</span>
-                <h3 class="section-title">稼働中のシステム</h3>
-                <p class="section-desc">すでに現場導入済みで、業務改善効果が出ている事例です。</p>
-            </div>
             
-            <div class="solution-list">
-                <article class="solution-card">
-                    <div class="solution-img">
-                        <span class="status-badge active">稼働中</span>
-                        <div class="img-placeholder">💻 顧客管理画面</div>
-                    </div>
-                    <div class="solution-content">
-                        <div class="solution-category">営業効率化</div>
-                        <h4 class="solution-title">顧客追客の自動メール配信システム</h4>
-                        
-                        <div class="problem-box">
-                            <span class="label-problem">Before</span>
-                            <p>営業担当の手動送信による負担と、送信漏れのリスクがあった。</p>
-                        </div>
-                        <div class="result-box">
-                            <span class="label-result">After</span>
-                            <p>自動配信により<strong>1日1時間の作業削減</strong>。アポ率も向上。</p>
-                        </div>
-                    </div>
-                </article>
+            <section id="top" class="hero active">
+                <div class="hero-content">
+                    <p class="tagline">TOHO HOUSE NEXT SYSTEM DEPT.</p>
+                    <h2 class="hero-title">IT SOLUTION PORTFOLIO</h2>
+                    <p style="margin-top:20px; font-size:1.1rem; font-weight:500;">
+                        その「手間」な作業、システムで解決できるかもしれません。<br>
+                        私たちが開発した業務改善の事例をご覧ください。
+                    </p>
+                </div>
+            </section>
 
-                <article class="solution-card">
-                    <div class="solution-img">
-                        <span class="status-badge active">稼働中</span>
-                        <div class="img-placeholder">📄 電子申請画面</div>
+            <section id="released" class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle">RELEASED</span>
+                        <h3 class="section-title">稼働中のシステム</h3>
+                        <p class="section-desc">すでに現場導入済みで、業務改善効果が出ている事例です。</p>
                     </div>
-                    <div class="solution-content">
-                        <div class="solution-category">ペーパーレス</div>
-                        <h4 class="solution-title">社内稟議・経費精算ポータル</h4>
-                        
-                        <div class="problem-box">
-                            <span class="label-problem">Before</span>
-                            <p>承認ハンコをもらうための出社や、紙の管理が手間だった。</p>
-                        </div>
-                        <div class="result-box">
-                            <span class="label-result">After</span>
-                            <p>スマホ承認で<strong>リードタイムを3日から数時間に短縮</strong>。</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+                    
+                    <div class="solution-list">
+                        <article class="solution-card">
+                            <div class="solution-img">
+                                <span class="status-badge active">稼働中</span>
+                                <div class="img-placeholder">💻 顧客管理画面</div>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-category">営業効率化</div>
+                                <h4 class="solution-title">顧客追客の自動メール配信システム</h4>
+                                <div class="problem-box">
+                                    <span class="label-problem">Before</span>
+                                    <p>営業担当の手動送信による負担と、送信漏れのリスクがあった。</p>
+                                </div>
+                                <div class="result-box">
+                                    <span class="label-result">After</span>
+                                    <p>自動配信により<strong>1日1時間の作業削減</strong>。アポ率も向上。</p>
+                                </div>
+                            </div>
+                        </article>
 
-    <section id="developing" class="section bg-gray">
-        <div class="container fade-in">
-            <div class="section-header">
-                <span class="section-subtitle">IN DEVELOPMENT</span>
-                <h3 class="section-title">現在開発中のプロジェクト</h3>
-                <p class="section-desc">現場からのヒアリングをもとに、鋭意制作中のシステムです。</p>
-            </div>
+                        <article class="solution-card">
+                            <div class="solution-img">
+                                <span class="status-badge active">稼働中</span>
+                                <div class="img-placeholder">📄 電子申請画面</div>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-category">ペーパーレス</div>
+                                <h4 class="solution-title">社内稟議・経費精算ポータル</h4>
+                                <div class="problem-box">
+                                    <span class="label-problem">Before</span>
+                                    <p>承認ハンコをもらうための出社や、紙の管理が手間だった。</p>
+                                </div>
+                                <div class="result-box">
+                                    <span class="label-result">After</span>
+                                    <p>スマホ承認で<strong>リードタイムを3日から数時間に短縮</strong>。</p>
+                                </div>
+                            </div>
+                        </article>
 
-            <div class="solution-list">
-                <article class="solution-card dev-card">
-                    <div class="solution-img">
-                        <span class="status-badge developing">開発中</span>
-                        <div class="img-placeholder">🚧 開発中の画面イメージ</div>
+                        <article class="solution-card">
+                            <div class="solution-img">
+                                <span class="status-badge" style="background:#666;">社内活用例</span>
+                                <div class="img-placeholder">📊 日報システムの画面</div>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-category">業務効率化モデル</div>
+                                <h4 class="solution-title">スマホで完結！工数管理・日報システム</h4>
+                                <div class="problem-box">
+                                    <span class="label-problem">Before</span>
+                                    <p>「何に何時間使ったか」の集計が手作業で、正確なコスト管理ができていなかった。</p>
+                                </div>
+                                <div class="result-box">
+                                    <span class="label-result">After</span>
+                                    <p>スマホでポチポチ入力するだけ。月次レポートも自動生成され、<strong>集計作業がゼロ</strong>に。</p>
+                                </div>
+                                <div class="card-footer" style="margin-top:15px; padding-top:10px; border-top:1px dashed #ddd; font-size:0.9rem; color:#0055aa; font-weight:bold;">
+                                    💡 営業日報や工事報告書用にカスタマイズ可能です！
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                    <div class="solution-content">
-                        <div class="solution-category">AI活用</div>
-                        <h4 class="solution-title">AI不動産査定エンジン</h4>
-                        
-                        <div class="problem-box">
-                            <span class="label-problem">課題</span>
-                            <p>査定書の作成に毎回30分以上かかっており、お客様をお待たせしてしまう。</p>
-                        </div>
-                        <div class="dev-box">
-                            <span class="label-dev">開発の狙い</span>
-                            <p>過去データをAIが解析し、<strong>ワンクリックで査定額を算出</strong>する機能を実装予定。</p>
-                        </div>
-                        <div class="release-info">
-                            📅 2025年 夏 リリース予定
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+                </div>
+            </section>
 
-</main>
+            <section id="developing" class="section bg-gray">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle">IN DEVELOPMENT</span>
+                        <h3 class="section-title">現在開発中のプロジェクト</h3>
+                        <p class="section-desc">現場からのヒアリングをもとに、鋭意制作中のシステムです。</p>
+                    </div>
+
+                    <div class="solution-list">
+                        <article class="solution-card dev-card">
+                            <div class="solution-img">
+                                <span class="status-badge developing">開発中</span>
+                                <div class="img-placeholder">🚧 開発中の画面イメージ</div>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-category">AI活用</div>
+                                <h4 class="solution-title">AI不動産査定エンジン</h4>
+                                <div class="problem-box">
+                                    <span class="label-problem">課題</span>
+                                    <p>査定書の作成に毎回30分以上かかっており、お客様をお待たせしてしまう。</p>
+                                </div>
+                                <div class="dev-box">
+                                    <span class="label-dev">開発の狙い</span>
+                                    <p>過去データをAIが解析し、<strong>ワンクリックで査定額を算出</strong>する機能を実装予定。</p>
+                                </div>
+                                <div class="release-info">
+                                    📅 2025年 夏 リリース予定
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
 
     <script src="script.js"></script>
