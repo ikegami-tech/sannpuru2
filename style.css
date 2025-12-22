@@ -41,10 +41,10 @@ ul { list-style: none; padding: 0; margin: 0; }
     box-shadow: 4px 0 15px rgba(0,0,0,0.15);
 }
 
-/* ▼修正：ロゴ周りを透明に、ロゴ自体を白く反転 */
+/* --- 左側サイドバー（ロゴ設定を元に戻す） --- */
 .sidebar-header {
     padding: 30px 20px;
-    background: transparent; /* 背景透明 */
+    background: #fff; /* 背景を白に戻す */
     text-align: center;
 }
 
@@ -52,10 +52,7 @@ ul { list-style: none; padding: 0; margin: 0; }
     max-width: 100%;
     height: auto;
     display: block;
-    /* 白背景のロゴを白文字・背景透明に変換するフィルタ */
-    filter: invert(1) grayscale(1) brightness(100);
-    mix-blend-mode: screen; 
-}
+    /* フィルター（filter: invert...）を削除して、元の画像をそのまま表示 */
 
 /* メニュー */
 .sidebar-nav { flex-grow: 1; padding: 20px 0; }
