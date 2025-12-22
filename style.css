@@ -128,16 +128,21 @@ ul { list-style: none; padding: 0; margin: 0; }
     width: calc(100% - var(--sidebar-width));
 }
 
-/* --- タブ切り替え制御 --- */
+/* --- タブ切り替え制御（修正版） --- */
 .main-content .section,
 .main-content .hero {
     display: none; /* 基本は隠す */
     animation: fadeIn 0.5s ease;
 }
 
-.main-content .section.active,
+/* 通常のセクションは block で表示 */
+.main-content .section.active {
+    display: block;
+}
+
+/* ▼修正：TOP画面（hero）は flex で表示しないと中央寄せが効かない */
 .main-content .hero.active {
-    display: block; /* activeがついたら表示 */
+    display: flex; 
 }
 
 @keyframes fadeIn {
