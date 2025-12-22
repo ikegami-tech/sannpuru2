@@ -102,12 +102,16 @@ ul { list-style: none; padding: 0; margin: 0; }
     margin: 0 0 5px 0;
 }
 
+/* --- サイドバーの電話番号修正版 --- */
 .sc-number {
-    font-size: 1.1rem;
+    font-size: 0.95rem; /* 1.1rem から少し小さくして枠内に収める */
     font-weight: bold;
     color: #fff;
     font-family: sans-serif;
     letter-spacing: 0.05em;
+    
+    /* ▼これを追加：強制的に改行を禁止する */
+    white-space: nowrap;
 }
 
 .sc-icon {
