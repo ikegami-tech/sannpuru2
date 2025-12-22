@@ -145,30 +145,23 @@ ul { list-style: none; padding: 0; margin: 0; }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- メインビジュアル（中央寄せ修正版） --- */
+/* --- メインビジュアル（中央寄せ＆文字サイズ拡大版） --- */
 .hero {
-    /* 1. 高さを画面いっぱいにする */
-    height: 100vh;
-    min-height: 600px; /* 画面が小さすぎてもこれ以上は縮まないようにする */
-    
-    /* 2. 背景画像の設定 */
+    height: 100vh; /* 画面いっぱいの高さ */
     position: relative;
     background-image: url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;
     background-position: center bottom;
-    
-    /* 3. ▼ここが重要：中身を「上下左右のど真ん中」に配置する魔法のコード */
-    display: flex;
-    flex-direction: column;  /* 中身を縦並びにする */
-    justify-content: center; /* 縦方向の真ん中 */
-    align-items: center;     /* 横方向の真ん中 */
-    
-    /* 4. 文字の設定 */
-    text-align: center;      /* 文章自体も中央揃え */
     color: #fff;
+
+    /* ▼重要：中身を上下左右のド真ん中に配置する設定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 上下の中心 */
+    align-items: center;     /* 左右の中心 */
+    text-align: center;      /* テキストの中央揃え */
 }
 
-/* フィルター（画像の上にかける青い膜） */
 .hero::before {
     content: '';
     position: absolute;
@@ -177,31 +170,52 @@ ul { list-style: none; padding: 0; margin: 0; }
     z-index: 1;
 }
 
-/* 文字エリアの調整 */
 .hero-content {
     position: relative;
     z-index: 2;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 15px rgba(0,0,0,0.7); /* 影を少し強くして視認性アップ */
     
-    /* 横幅が広がりすぎないように制限 */
-    width: 100%;
-    max-width: 800px;
-    padding: 0 20px; /* スマホで端が切れないように */
+    /* 幅の設定（念のため） */
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* 以下は変更なし（そのまま残してください） */
+/* ▼文字サイズを大きく変更 */
 .tagline {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* 1.2rem から拡大 */
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 0.1em;
 }
 
 .hero-title {
-    font-size: 3rem;
-    margin: 0;
-    letter-spacing: 0.1em;
+    font-size: 4.5rem; /* 3rem から大幅拡大 */
+    margin: 0 0 30px 0; /* 下の余白も少し増やす */
+    letter-spacing: 0.05em;
     font-weight: 800;
+    line-height: 1.2;
+}
+
+/* 説明文（pタグ）のサイズ調整 */
+.hero-content p:last-child {
+    font-size: 1.3rem; /* 1.1rem から拡大 */
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* --- スマホ対応（画面が狭いときの文字サイズ調整） --- */
+/* これをstyle.cssの一番下に追加しておくと親切です */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem; /* スマホでは少し抑えめに */
+    }
+    .tagline {
+        font-size: 1.1rem;
+    }
+    .hero-content p:last-child {
+        font-size: 1rem;
+    }
 }
 /* --- セクション共通設定 --- */
 .section { padding: 90px 40px; }
