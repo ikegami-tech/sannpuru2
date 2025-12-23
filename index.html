@@ -9,6 +9,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* サブメニューは初期状態で非表示 */
+        .submenu {
+            display: none; /* これが重要 */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        /* openクラスが付いたら表示する */
+        .submenu.open {
+            display: block; /* これが重要 */
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 親メニュー（タブリンク）のデザイン調整 */
+        .sidebar-nav ul li a.tab-link {
+            position: relative;
+            display: block;
+            padding: 15px 25px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* 親メニューのアクティブ時 */
+        .sidebar-nav ul li a.tab-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #007bff;
+        }
+
+        /* 矢印アイコン（通常時：右向き） */
+        .tab-link::after {
+            content: '▶';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.7em;
+            transition: transform 0.3s;
+        }
+        /* 矢印アイコン（開いている時：下向きに回転） */
+        .tab-link.menu-open::after {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        /* サブメニュー内のリンクスタイル */
+        .submenu li a {
+            padding: 10px 15px 10px 40px;
+            font-size: 0.85rem;
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s;
+        }
+        .submenu li a:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding-left: 45px;
+        }
+    </style>
 </head>
 <body>
 
