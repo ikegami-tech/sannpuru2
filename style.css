@@ -556,3 +556,49 @@ ul { list-style: none; padding: 0; margin: 0; }
     border: 1px solid #eee;
     background-color: #f9f9f9; /* 画像がない時の背景色 */
 }
+/* 主な機能のレイアウト用CSS */
+.feature-card-list {
+    margin-top: 20px;
+}
+
+.feature-row {
+    background: #fff;       /* 背景色：白 */
+    border: 1px solid #ddd; /* 薄い枠線 */
+    border-radius: 8px;     /* 角丸 */
+    padding: 20px;          /* 内側の余白 */
+    margin-bottom: 24px;    /* 下のカードとの間隔 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* ほんのり影 */
+}
+
+.feature-head {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-left: 4px solid #0056b3; /* 左側の青いアクセント線 */
+    padding-left: 10px;
+}
+
+.feature-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.feature-img-box {
+    width: 100%;
+    background-color: #f9f9f9; /* 画像がない時の背景色 */
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center; /* 画像を中央寄せ */
+}
+
+.feature-img-box img {
+    max-width: 100%;    /* 横幅からはみ出さない */
+    height: auto;       /* 高さは自動調整 */
+    display: block;
+    margin: 0 auto;
+}
