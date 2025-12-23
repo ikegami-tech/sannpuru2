@@ -11,17 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* サブメニューは最初隠しておく */
+        /* サブメニューは基本非表示（!importantで強制） */
         .submenu {
-            display: none;
+            display: none !important;
             list-style: none;
             padding: 0;
             margin: 0;
             background-color: rgba(0, 0, 0, 0.2);
         }
-        /* openクラスが付いたら表示する */
+        /* openクラスが付いたら「絶対に」表示する */
         .submenu.open {
-            display: block;
+            display: block !important;
             animation: slideDown 0.3s ease;
         }
         @keyframes slideDown {
@@ -29,7 +29,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 親メニュー（タブリンク）のデザイン */
+        /* リンクのデザイン */
         .sidebar-nav ul li a.tab-link {
             position: relative;
             display: block;
@@ -38,13 +38,12 @@
             text-decoration: none;
             cursor: pointer;
         }
-        /* 親メニューのアクティブ時 */
         .sidebar-nav ul li a.tab-link.active {
             background-color: rgba(255, 255, 255, 0.1);
-            border-left: 4px solid #00aaff; /* アクセントカラー */
+            border-left: 4px solid #00aaff;
         }
 
-        /* 矢印アイコン（通常時：右向き） */
+        /* 矢印アイコン */
         .tab-link::after {
             content: '▶';
             position: absolute;
@@ -54,12 +53,11 @@
             font-size: 0.7em;
             transition: transform 0.3s;
         }
-        /* 矢印アイコン（開いている時：下向き） */
         .tab-link.menu-open::after {
             transform: translateY(-50%) rotate(90deg);
         }
 
-        /* サブメニュー内のリンクスタイル */
+        /* サブメニューのリンク */
         .submenu li a {
             padding: 10px 15px 10px 40px;
             font-size: 0.85rem;
@@ -89,7 +87,7 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="#" class="tab-link" data-target="released">稼働中のシステム</a>
+                        <a href="#" class="tab-link active" data-target="released">稼働中のシステム</a>
                         <ul class="submenu">
                             <li><a href="#sys-syslog">・シスろぐ</a></li>
                             <li><a href="#sys-suumo">・SuumoQuick</a></li>
@@ -131,7 +129,7 @@
 
         <main class="main-content">
             
-            <section id="released" class="section">
+            <section id="released" class="section active">
                 <div class="container">
                     <div id="release-list-view">
                         <div class="section-header">
@@ -150,14 +148,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">自社開発システム</div>
                                         <h4 class="solution-title">シスろぐ</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">Before</span>
-                                            <p>日報は「ただの報告作業」になりがちで、書くのが面倒で形骸化しがち。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">After</span>
-                                            <p>AI返信機能などで<strong>「書くのが楽しみ」</strong>な日報へ。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">Before</span><p>日報は「ただの報告作業」になりがちで、書くのが面倒で形骸化しがち。</p></div>
+                                        <div class="result-box"><span class="label-result">After</span><p>AI返信機能などで<strong>「書くのが楽しみ」</strong>な日報へ。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -171,14 +163,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">入力支援</div>
                                         <h4 class="solution-title">SuumoQuick</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>1件の入稿に1時間もかかり、キャプションの質にバラつきがあった。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>作業時間を1件30分削減し、クオリティを一定化。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>1件の入稿に1時間もかかり、キャプションの質にバラつきがあった。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>作業時間を1件30分削減し、クオリティを一定化。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -192,14 +178,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">入力支援</div>
                                         <h4 class="solution-title">MultiQuick</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>マルチユースV3への入稿作業に時間がかかっていた。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>作業時間を1件あたり30分削減。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>マルチユースV3への入稿作業に時間がかかっていた。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>作業時間を1件あたり30分削減。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -213,14 +193,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">情報取得</div>
                                         <h4 class="solution-title">TohoGPS</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>周辺環境の名称や距離、写真を調べるのに時間がかかる。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>情報取得を自動化し、作業時間を20分削減。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>周辺環境の名称や距離、写真を調べるのに時間がかかる。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>情報取得を自動化し、作業時間を20分削減。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -234,14 +208,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">データ収集</div>
                                         <h4 class="solution-title">リクルート写真ダウンローダー</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>周辺環境Photoサービスの終了に伴うデータ損失の危機。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>1都3県の約15万枚の周辺環境写真データを確保。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>周辺環境Photoサービスの終了に伴うデータ損失の危機。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>1都3県の約15万枚の周辺環境写真データを確保。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -255,14 +223,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">セキュリティ</div>
                                         <h4 class="solution-title">PDF-PPAP</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>パスワード設定忘れなど、手作業によるヒューマンエラー。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>圧縮・パスワード生成・メール作成を全自動化。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>パスワード設定忘れなど、手作業によるヒューマンエラー。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>圧縮・パスワード生成・メール作成を全自動化。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -276,14 +238,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">業務ツール</div>
                                         <h4 class="solution-title">PDFdec</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>パスワード不明で開けない、加工できないPDFがある。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>強制復号による作業効率化。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>パスワード不明で開けない、加工できないPDFがある。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>強制復号による作業効率化。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -297,14 +253,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">業務ツール</div>
                                         <h4 class="solution-title">PDFCutter（一括くん）</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>PDFデータの整理や分割に手間がかかっていた。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>自動ページ分割・リネームにより現場の作業効率アップ。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>PDFデータの整理や分割に手間がかかっていた。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>自動ページ分割・リネームにより現場の作業効率アップ。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -318,14 +268,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">Webツール</div>
                                         <h4 class="solution-title">東宝アップローダー</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>ファイル送付のセキュリティ不安、閲覧確認ができない。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>アクセスログ追跡機能によるセキュリティと営業力の向上。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>ファイル送付のセキュリティ不安、閲覧確認ができない。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>アクセスログ追跡機能によるセキュリティと営業力の向上。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -339,14 +283,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">管理ツール</div>
                                         <h4 class="solution-title">KASHIKA自動バックアップ</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>誤操作による担当営業の一括更新などの事故リスク。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>データの自動バックアップにより、事故後の復元が可能に。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>誤操作による担当営業の一括更新などの事故リスク。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>データの自動バックアップにより、事故後の復元が可能に。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -360,14 +298,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">業務ツール</div>
                                         <h4 class="solution-title">PDF軽くなーる</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>メール添付容量の超過や、それに伴う業務効率の低下。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>PDF容量の軽量化による時間短縮とストレス軽減。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>メール添付容量の超過や、それに伴う業務効率の低下。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>PDF容量の軽量化による時間短縮とストレス軽減。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -381,14 +313,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">業務効率化</div>
                                         <h4 class="solution-title">KASHIKAデータ集計</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>定型的な手作業の反復と、業務の属人化。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>CSV変換の自動化により、作業時間短縮と精度向上を実現。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>定型的な手作業の反復と、業務の属人化。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>CSV変換の自動化により、作業時間短縮と精度向上を実現。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -402,14 +328,8 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">AI / 音声</div>
                                         <h4 class="solution-title">コエキャッチ</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>話し合いの内容を記録する手間や、忘却による損失。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>ワンクリックで録音・AI文字起こし・Slack送信を自動化。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>話し合いの内容を記録する手間や、忘却による損失。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>ワンクリックで録音・AI文字起こし・Slack送信を自動化。</p></div>
                                     </div>
                                 </a>
                             </article>
@@ -423,21 +343,14 @@
                                     <div class="solution-content" style="width: 60%; padding: 35px;">
                                         <div class="solution-category">自動化</div>
                                         <h4 class="solution-title">Auto物確</h4>
-                                        <div class="problem-box">
-                                            <span class="label-problem">課題</span>
-                                            <p>情報の遅延による機会損失と、膨大な作業負荷。</p>
-                                        </div>
-                                        <div class="result-box">
-                                            <span class="label-result">効果</span>
-                                            <p>CSVを基にレインズ等の物件確認を全自動化。</p>
-                                        </div>
+                                        <div class="problem-box"><span class="label-problem">課題</span><p>情報の遅延による機会損失と、膨大な作業負荷。</p></div>
+                                        <div class="result-box"><span class="label-result">効果</span><p>CSVを基にレインズ等の物件確認を全自動化。</p></div>
                                     </div>
                                 </a>
                             </article>
 
                         </div>
                     </div>
-
                 </div>
             </section>
 
@@ -450,7 +363,6 @@
                     </div>
 
                     <div class="solution-list">
-                        
                         <article class="solution-card dev-card" id="sys-ai-satei" style="border-left: 5px solid #777;">
                             <div class="solution-img">
                                 <span class="status-badge" style="background:#777;">検討中</span>
@@ -459,17 +371,9 @@
                             <div class="solution-content">
                                 <div class="solution-category">AI活用</div>
                                 <h4 class="solution-title">AI不動産査定エンジン</h4>
-                                <div class="problem-box">
-                                    <span class="label-problem">現状の課題</span>
-                                    <p>査定書の作成に毎回30分以上かかってしまう。</p>
-                                </div>
-                                <div class="dev-box">
-                                    <span class="label-dev" style="color:#777;">検討ポイント</span>
-                                    <p>過去データをAIが解析し、<strong>ワンクリックで査定額を算出</strong>する仕組みを検証中。</p>
-                                </div>
-                                <div class="release-info" style="color:#777;">
-                                    📅 実現可否を調査中
-                                </div>
+                                <div class="problem-box"><span class="label-problem">現状の課題</span><p>査定書の作成に毎回30分以上かかってしまう。</p></div>
+                                <div class="dev-box"><span class="label-dev" style="color:#777;">検討ポイント</span><p>過去データをAIが解析し、<strong>ワンクリックで査定額を算出</strong>する仕組みを検証中。</p></div>
+                                <div class="release-info" style="color:#777;">📅 実現可否を調査中</div>
                             </div>
                         </article>
 
@@ -482,21 +386,12 @@
                                 <div class="solution-content" style="width: 60%; padding: 35px;">
                                     <div class="solution-category">AI / 画像</div>
                                     <h4 class="solution-title">Auto間取り図</h4>
-                                    <div class="problem-box">
-                                        <span class="label-problem">課題</span>
-                                        <p>間取り図作成にかかる外注費（1件3000円）と時間（1日）。</p>
-                                    </div>
-                                    <div class="result-box">
-                                        <span class="label-result">効果</span>
-                                        <p>AIにより無料で、わずか10分で作成が可能に。</p>
-                                    </div>
-                                    <div class="release-info" style="color:#777; margin-top: 15px; border-top: 1px dashed #ddd; padding-top: 10px;">
-                                        📅 2025年7月リリース予定
-                                    </div>
+                                    <div class="problem-box"><span class="label-problem">課題</span><p>間取り図作成にかかる外注費（1件3000円）と時間（1日）。</p></div>
+                                    <div class="result-box"><span class="label-result">効果</span><p>AIにより無料で、わずか10分で作成が可能に。</p></div>
+                                    <div class="release-info" style="color:#777; margin-top: 15px; border-top: 1px dashed #ddd; padding-top: 10px;">📅 2025年7月リリース予定</div>
                                 </div>
                             </a>
                         </article>
-
                     </div>
                 </div>
             </section>
@@ -525,7 +420,7 @@
                 setTimeout(() => targetSection.classList.add('active'), 10);
             }
 
-            // 2. 左メニューの開閉（他を閉じてターゲットを開く）
+            // 2. 左メニューの開閉（他を閉じる）
             document.querySelectorAll('.submenu').forEach(sub => sub.classList.remove('open'));
             document.querySelectorAll('.tab-link').forEach(tab => {
                 tab.classList.remove('menu-open');
@@ -539,15 +434,15 @@
                 submenu.classList.add('open');
             }
             
-            // 自分の見た目を「選択中」にする
+            // 自分をアクティブにする
             linkElement.classList.add('active');
             linkElement.classList.add('menu-open');
 
-            // ★重要：開いているタブのIDをブラウザに記憶させる
+            // 状態を記憶
             sessionStorage.setItem('activeTabId', targetId);
         }
 
-        // --- A. タブ（親メニュー）をクリックした時の処理 ---
+        // --- A. タブクリック時 ---
         tabLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -555,13 +450,11 @@
             });
         });
 
-        // --- B. サブメニュー（・シスろぐ等）をクリックした時の処理 ---
+        // --- B. サブメニュークリック時 ---
         const subLinks = document.querySelectorAll('.submenu a');
         subLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                // スムーズスクロール
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
@@ -573,18 +466,16 @@
             });
         });
 
-        // --- C. ページ読み込み時の処理（記憶の復元） ---
+        // --- C. ページ読み込み時の復元 ---
         const savedTabId = sessionStorage.getItem('activeTabId');
         let initialTab = null;
 
         if (savedTabId) {
             initialTab = document.querySelector(`.tab-link[data-target="${savedTabId}"]`);
         }
-        
         if (!initialTab) {
             initialTab = document.querySelector('.tab-link[data-target="released"]');
         }
-
         if (initialTab) {
             activateTab(initialTab);
         }
