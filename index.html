@@ -9,10 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* サブメニューは初期状態で非表示 */
+        /* サブメニューは最初隠しておく */
         .submenu {
-            display: none; /* これが重要 */
+            display: none;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -20,7 +21,7 @@
         }
         /* openクラスが付いたら表示する */
         .submenu.open {
-            display: block; /* これが重要 */
+            display: block;
             animation: slideDown 0.3s ease;
         }
         @keyframes slideDown {
@@ -28,7 +29,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 親メニュー（タブリンク）のデザイン調整 */
+        /* 親メニュー（タブリンク）のデザイン */
         .sidebar-nav ul li a.tab-link {
             position: relative;
             display: block;
@@ -40,7 +41,7 @@
         /* 親メニューのアクティブ時 */
         .sidebar-nav ul li a.tab-link.active {
             background-color: rgba(255, 255, 255, 0.1);
-            border-left: 4px solid #007bff;
+            border-left: 4px solid #00aaff; /* アクセントカラー */
         }
 
         /* 矢印アイコン（通常時：右向き） */
@@ -53,7 +54,7 @@
             font-size: 0.7em;
             transition: transform 0.3s;
         }
-        /* 矢印アイコン（開いている時：下向きに回転） */
+        /* 矢印アイコン（開いている時：下向き） */
         .tab-link.menu-open::after {
             transform: translateY(-50%) rotate(90deg);
         }
@@ -88,7 +89,7 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="#" class="tab-link active" data-target="released">稼働中のシステム</a>
+                        <a href="#" class="tab-link" data-target="released">稼働中のシステム</a>
                         <ul class="submenu">
                             <li><a href="#sys-syslog">・シスろぐ</a></li>
                             <li><a href="#sys-suumo">・SuumoQuick</a></li>
@@ -130,9 +131,8 @@
 
         <main class="main-content">
             
-            <section id="released" class="section active">
+            <section id="released" class="section">
                 <div class="container">
-                    
                     <div id="release-list-view">
                         <div class="section-header">
                             <span class="section-subtitle">RELEASED</span>
@@ -141,7 +141,6 @@
                         </div>
                         
                         <div class="solution-list">
-
                             <article class="solution-card hover-action" id="sys-syslog">
                                 <a href="systems/syslog.html" style="text-decoration: none; color: inherit; display: flex; width: 100%;">
                                     <div class="solution-img" style="position: relative; width: 40%; background-color: #eaedf2; overflow: hidden; min-height: 250px;">
@@ -515,7 +514,7 @@
         function activateTab(linkElement) {
             const targetId = linkElement.getAttribute('data-target');
 
-            // 1. 右側の画面切り替え（すべて隠してターゲットだけ表示）
+            // 1. 右側の画面切り替え
             sections.forEach(sec => {
                 sec.style.display = 'none';
                 sec.classList.remove('active');
@@ -575,25 +574,21 @@
         });
 
         // --- C. ページ読み込み時の処理（記憶の復元） ---
-        // 前回の状態（どのタブを開いていたか）を取得
         const savedTabId = sessionStorage.getItem('activeTabId');
         let initialTab = null;
 
         if (savedTabId) {
-            // 記憶があればそのタブを探す
             initialTab = document.querySelector(`.tab-link[data-target="${savedTabId}"]`);
         }
         
-        // 記憶がない（初めて来た）場合は「稼働中のシステム」をデフォルトにする
         if (!initialTab) {
             initialTab = document.querySelector('.tab-link[data-target="released"]');
         }
 
-        // 決定したタブを開く
         if (initialTab) {
             activateTab(initialTab);
         }
     });
-</script>
+    </script>
 </body>
 </html>
