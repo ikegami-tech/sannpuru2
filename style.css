@@ -587,18 +587,35 @@ ul { list-style: none; padding: 0; margin: 0; }
     margin-bottom: 15px;
 }
 
+/* ▼▼▼ 修正箇所ここから ▼▼▼ */
+
+/* 画像を表示する「枠」のスタイル */
 .feature-img-box {
     width: 100%;
-    background-color: #f9f9f9; /* 画像がない時の背景色 */
-    border: 1px solid #eee;
-    border-radius: 4px;
+    height: 350px; /* ★重要：ここで高さを固定します。お好みで数値を調整してください */
+    background-color: #f0f2f5; /* 画像が枠より小さい時に見える背景色（薄いグレー） */
+    border: 1px solid #eee;    /* 枠線 */
+    border-radius: 8px;        /* 枠の角丸 */
     overflow: hidden;
-    text-align: center; /* 画像を中央寄せ */
+    
+    /* 画像を枠内で上下左右中央に配置する設定 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* 枠の中にある「画像自体」のスタイル */
 .feature-img-box img {
-    max-width: 100%;    /* 横幅からはみ出さない */
-    height: auto;       /* 高さは自動調整 */
+    max-width: 100%;     /* 幅は枠からはみ出さない */
+    max-height: 100%;    /* 高さも枠からはみ出さない */
+    width: auto;         /* 縦横比を維持 */
+    height: auto;        /* 縦横比を維持 */
+    
+    /* ★最重要：画像の比率を保ったまま、枠内に全体を収める設定 */
+    object-fit: contain; 
+    
     display: block;
-    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 画像自体に少し影をつけて立体感を出す */
 }
+
+/* ▲▲▲ 修正箇所ここまで ▲▲▲ */
