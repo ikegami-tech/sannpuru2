@@ -500,3 +500,59 @@ ul { list-style: none; padding: 0; margin: 0; }
     border: 1px solid #eee; /* 薄い枠線をつける */
     margin-bottom: 30px;    /* 下に余白を作る */
 }
+/* --- 機能紹介（画像付きカード）のスタイル --- */
+.feature-grid {
+    display: grid;
+    /* 幅に合わせて自動で折り返す（スマホは1列、PCは2列〜3列） */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-title {
+    font-weight: bold;
+    color: #003366; /* TOHO NAVY */
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+/* アイコン代わりの装飾 */
+.feature-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 20px;
+    background-color: #00aaff;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.feature-img {
+    width: 100%;
+    height: 160px; /* 高さを統一して見栄えを整える */
+    object-fit: cover; /* 枠に合わせてトリミング */
+    border-radius: 6px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9; /* 画像がない時の背景色 */
+}
