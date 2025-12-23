@@ -441,41 +441,88 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // サブメニューのリンクをクリックした時の処理
-            const subLinks = document.querySelectorAll('.submenu a');
-            
-            subLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault(); // 通常のジャンプをキャンセル
-                    
-                    // リンク先のIDを取得（例: #sys-suumo → sys-suumo）
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        /* ---------------------------------------------
+           1. メニューの開閉 ＆ タブ切り替え機能
+        --------------------------------------------- */
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const sections = document.querySelectorAll('.section');
 
-                    if (targetElement) {
-                        // 親のセクション（releasedなど）が非表示なら表示させる
-                        const parentSection = targetElement.closest('.section');
-                        if (parentSection && parentSection.style.display === 'none') {
-                            // タブ切り替えボタンを擬似的にクリックして表示を切り替える
-                            const sectionId = parentSection.id;
-                            const tabBtn = document.querySelector(`.tab-link[data-target="${sectionId}"]`);
-                            if(tabBtn) tabBtn.click();
-                        }
+        tabLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
 
-                        // 少し待ってからスクロール（タブ切り替えの反映待ち）
-                        setTimeout(() => {
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center' // 画面の真ん中に来るように
-                            });
-                        }, 100);
+                // --- A. タブ切り替え（右側画面の変更） ---
+                const targetId = this.getAttribute('data-target');
+                
+                // すべてのセクションを隠す
+                sections.forEach(sec => {
+                    sec.style.display = 'none';
+                    sec.classList.remove('active');
+                });
+
+                // ターゲットのセクションだけ表示
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    setTimeout(() => targetSection.classList.add('active'), 10);
+                }
+
+                // --- B. アコーディオン（左メニューの開閉） ---
+                // まず、クリックされたリンクの親(li)の中にあるsubmenuを探す
+                const parentLi = this.closest('li');
+                const submenu = parentLi.querySelector('.submenu');
+
+                // 他のメニューは閉じる（ひとつだけ開く仕様にする場合）
+                // ※もし複数同時に開きたい場合は、このブロックを削除してください
+                document.querySelectorAll('.submenu').forEach(sub => {
+                    if (sub !== submenu) {
+                        sub.classList.remove('open');
                     }
                 });
+                document.querySelectorAll('.tab-link').forEach(tab => {
+                    if (tab !== this) {
+                        tab.classList.remove('menu-open');
+                        tab.classList.remove('active'); // アクティブ装飾も外す
+                    }
+                });
+
+                // 自分のメニューを開閉する
+                if (submenu) {
+                    submenu.classList.toggle('open');
+                }
+                
+                // 自分にアクティブクラスと矢印回転クラスをつける
+                this.classList.add('active');
+                this.classList.toggle('menu-open');
             });
         });
-    </script>
 
-    <script src="script.js"></script>
+        /* ---------------------------------------------
+           2. サブメニューをクリックした時のスムーズスクロール
+        --------------------------------------------- */
+        const subLinks = document.querySelectorAll('.submenu a');
+        
+        subLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // リンク先のIDを取得
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    // スクロール実行
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        });
+
+    });
+</script>
 </body>
 </html>
