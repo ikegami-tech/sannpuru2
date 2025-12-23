@@ -678,3 +678,64 @@ ul { list-style: none; padding: 0; margin: 0; }
     background-color: rgba(255, 255, 255, 0.1);
     padding-left: 45px; /* ホバー時に少し動く */
 }
+/* --- サイドバーのサブメニュー（アコーディオン） --- */
+
+/* サブメニューは最初隠しておく */
+.submenu {
+    display: none; /* ★ここがポイント：非表示 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* クラス "open" がついたら表示する */
+.submenu.open {
+    display: block;
+    animation: slideDown 0.3s ease; /* フワッと開くアニメーション */
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* サブメニューのリンクデザイン */
+.submenu li a {
+    padding: 10px 15px 10px 40px;
+    font-size: 0.85rem;
+    color: #ccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: block;
+    transition: all 0.2s;
+}
+
+.submenu li a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: 45px;
+}
+
+/* 親メニュー（タブリンク）に矢印をつける */
+.tab-link {
+    position: relative;
+    display: block;
+    padding: 15px 25px; /* 元のpaddingに合わせる */
+    color: #fff;
+}
+
+/* 矢印アイコン（▼） */
+.tab-link::after {
+    content: '▶'; /* 閉じている時は右向き */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    transition: transform 0.3s;
+}
+
+/* 開いている時の矢印（▼） */
+.tab-link.menu-open::after {
+    transform: translateY(-50%) rotate(90deg); /* 90度回転して下向きに */
+}
