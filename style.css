@@ -619,3 +619,23 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* ▲▲▲ 修正箇所ここまで ▲▲▲ */
+/* --- リンク付きカードのスマホ対応 --- */
+/* 画面幅が768px以下のときの設定 */
+@media (max-width: 768px) {
+    /* リンクを縦並び（ブロック）に戻す */
+    .solution-card a {
+        flex-direction: column;
+    }
+    
+    /* 画像とテキストエリアの幅を100%にする */
+    .solution-card a .solution-img,
+    .solution-card a .solution-content {
+        width: 100% !important;
+    }
+
+    /* 画像の高さ調整 */
+    .solution-card a .solution-img {
+        height: 200px !important;
+        min-height: auto !important;
+    }
+}
