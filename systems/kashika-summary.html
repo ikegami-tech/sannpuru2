@@ -8,45 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper" style="display: block;"> 
-        <main class="main-content" style="margin-left: 0; width: 100%;">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo"><img src="../images/logo.png" alt="TOHO HOUSE NEXT"></h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul><li><a href="../index.html" class="tab-link active">← トップに戻る</a></li></ul>
+            </nav>
+            <div class="sidebar-contact">
+                <p class="sc-label">システムに関するご相談</p>
+                <div class="sc-number"><span class="sc-icon">📞</span> 内線 03-4330-4444</div>
+            </div>
+            <div class="sidebar-footer"><p>&copy; TOHO HOUSE NEXT</p></div>
+        </aside>
+
+        <main class="main-content">
             <div class="container" style="padding-top: 40px;">
                 <a href="../index.html" class="back-btn">◀ 一覧に戻る</a>
 
                 <div class="detail-view" style="display: block; margin-top: 20px;">
                     <div class="detail-header">
-                        <span class="detail-category">開発時期：2025年5月</span>
+                        <span class="detail-category">業務効率化</span>
                         <h2 class="detail-title">KASHIKAデータ集計</h2>
-                        <div class="detail-meta">
-                            <span>利用者：練馬</span>
-                        </div>
+                        <div class="detail-meta"><span>📅 稼働開始：2025年</span></div>
                     </div>
 
                     <div class="detail-body">
                         <div class="feature-img-box">
-                            <img src="../images/logo.png" alt="集計画面">
+                            <img src="../images/logo.png" alt="データ集計画面">
                         </div>
 
                         <h3>解決した課題</h3>
-                        <p>データの集計作業が定型的な手作業の反復となっており、業務が属人化していました。</p>
+                        <p>毎月の営業成績や反響データの集計作業において、CSVのエクスポートや加工を手作業で行っており、多大な時間と属人化が発生していました。</p>
 
                         <h3>主な機能</h3>
                         <div class="feature-card-list">
                             <div class="feature-row">
-                                <h4 class="feature-head">CSVデータの自動変換</h4>
-                                <p class="feature-desc">KASHIKAから取得できるCSVデータを、掲示用に整形されたExcelデータ形式へ自動変換します。</p>
+                                <h4 class="feature-head">自動集計レポート</h4>
+                                <p class="feature-desc">KASHIKAのデータをAPIで取得し、必要なフォーマットへ自動変換してレポートを作成します。</p>
                             </div>
                         </div>
 
                         <h3>導入効果</h3>
                         <div class="effect-box">
-                            <p>⚡ <strong>集計作業時間の短縮</strong></p>
-                            <p>📊 <strong>データ精度の向上と信頼性の確保</strong></p>
-                        </div>
-
-                        <div style="margin-top: 30px; background: #f9f9f9; padding: 15px; border-radius: 8px; font-size: 0.9rem;">
-                            <strong>備考：</strong><br>
-                            千石社長の依頼で作成しました。
+                            <p>🤖 <strong>集計作業の完全自動化</strong></p>
+                            <p>📊 <strong>リアルタイムな数値把握による経営判断の迅速化</strong></p>
                         </div>
                         
                         <div style="text-align:center; margin-top:50px; margin-bottom: 50px;">
