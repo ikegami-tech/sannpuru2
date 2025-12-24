@@ -7,42 +7,181 @@
     <link rel="stylesheet" href="../style.css"> <link rel="icon" href="../favicon.ico">      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
+
+    <div class="wrapper"> 
         <aside class="sidebar">
-            <div class="sidebar-header"><h1 class="logo"><img src="../images/logo.png" alt="TOHO HOUSE NEXT"></h1></div>
-            <nav class="sidebar-nav"><ul><li><a href="../index.html" class="tab-link active">← トップに戻る</a></li></ul></nav>
-            <div class="sidebar-contact"><p class="sc-label">システムに関するご相談</p><div class="sc-number"><span class="sc-icon">📞</span> 内線 03-4330-4444</div></div>
-            <div class="sidebar-footer"><p>&copy; TOHO HOUSE NEXT</p></div>
+            <div class="sidebar-header">
+                <h1 class="logo">
+                    <img src="../images/logo.png" alt="TOHO HOUSE NEXT">
+                </h1>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="../index.html" class="tab-link active">← トップに戻る</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-contact">
+                <p class="sc-label">システムに関するご相談</p>
+                <div class="sc-number">
+                    <span class="sc-icon">📞</span> 内線 03-4330-4444
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <p>&copy; TOHO HOUSE NEXT</p>
+            </div>
         </aside>
+
         <main class="main-content">
+            
             <div class="container" style="padding-top: 40px;">
+                
                 <a href="../index.html" class="back-btn">◀ 一覧に戻る</a>
+
                 <div class="detail-view" style="display: block; margin-top: 20px;">
                     <div class="detail-header">
                         <span class="detail-category">自社開発システム</span>
                         <h2 class="detail-title">シスろぐ</h2>
-                        <div class="detail-meta"><span>目的：日報の習慣化・コミュニケーション活性化</span></div>
+                        <div class="detail-meta">
+                            <span>目的：日報の習慣化・コミュニケーション活性化</span>
+                        </div>
                     </div>
+
                     <div class="detail-body">
-                        <div class="feature-img-box"><img src="../images/syslog.png" alt="シスろぐ画面"></div>
+                        <div class="feature-img-box">
+                            <img src="../images/syslog.png" alt="シスろぐ画面">
+                        </div>
+
                         <h3>開発の背景・概要</h3>
-                        <p>従来の日報は個人の記録に留まりがちで、記入忘れや形骸化が課題でした。<br>そこで<strong>「誰でも毎日投稿したくなる日報」</strong>をコンセプトに開発。<br>業務進捗の共有はもちろん、AIからのユニークなフィードバックを楽しんだりとチームのコミュニケーションを自然に活性化させます。</p>
+                        <p>
+                            従来の日報は個人の記録に留まりがちで、記入忘れや形骸化が課題でした。<br>
+                            そこで<strong>「誰でも毎日投稿したくなる日報」</strong>をコンセプトに開発。<br>
+                            業務進捗の共有はもちろん、AIからのユニークなフィードバックを楽しんだりとチームのコミュニケーションを自然に活性化させます。
+                        </p>
+
                         <h3>主な機能</h3>
                         <div class="feature-card-list">
-                            <div class="feature-row"><h4 class="feature-head">選べるAI返信キャラ</h4><p class="feature-desc">その日の気分で「上司」「恋人」「幼馴染」などから返信相手を選択可能。毎日の投稿モチベーションを高めます。</p></div>
-                            <div class="feature-row"><h4 class="feature-head">スマホ版でも記録可能</h4><p class="feature-desc">移動中や出先からでも手軽に入力可能です。</p></div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">選べるAI返信キャラ</h4>
+                                <p class="feature-desc">
+                                    その日の気分で「上司」「恋人」「幼馴染」などから返信相手を選択可能。<br>
+                                    毎日の投稿モチベーションを高めます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/ai.png" alt="AI返信機能の画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">スマホ版でも記録可能</h4>
+                                <p class="feature-desc">
+                                    業務が終わった後に書き忘れても、帰り際に記録をすることができます。<br>
+                                    移動中や出先からでも手軽に入力可能です。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/sumaho.png" alt="スマホ版画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">ユーザー登録機能</h4>
+                                <p class="feature-desc">
+                                    使用するユーザーが自分で入力をすることで、自動的に登録することができます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/touroku.png" alt="ユーザー登録画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">リアルタイムの天気がわかる</h4>
+                                <p class="feature-desc">
+                                    位置情報を把握し、帰宅時の天気を把握することができます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/tenki.png" alt="天気表示画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">いいねボタン</h4>
+                                <p class="feature-desc">
+                                    投稿された日報に対してリアクションを付けることで、その人のモチベーション向上や既読確認ができます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/iine.png" alt="いいねボタン画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">過去の日報の編集</h4>
+                                <p class="feature-desc">
+                                    記入内容の変更や訂正があった際に、再提出することなく修正ができます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/hensyuu.png" alt="編集画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">未提出の時に通知が来る</h4>
+                                <p class="feature-desc">
+                                    仕事に集中していて記録を忘れていても、決まった時間に提出がないと連絡がきます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/tuuti.png" alt="通知画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">直感的な体調管理</h4>
+                                <p class="feature-desc">
+                                    今日のコンディションをアイコンで選択することで、メンバーの状態が一目で把握できます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/taityou.png" alt="体調管理画面">
+                                </div>
+                            </div>
+
+                            <div class="feature-row">
+                                <h4 class="feature-head">休日カレンダー</h4>
+                                <p class="feature-desc">
+                                    休みの削除、追加などを管理画面から誰でも簡単に修正することができます。
+                                </p>
+                                <div class="feature-img-box">
+                                    <img src="../images/kyuujitu.png" alt="カレンダー設定画面">
+                                </div>
+                            </div>
+
                         </div>
+
                         <h3>導入効果</h3>
                         <div class="effect-box">
                             <p>🚀 提出率：<strong>義務感なくほぼ100%を達成</strong></p>
                             <p>📚 可視化：<strong>互いの進捗状況が把握しやすい</strong></p>
+                            <p>💬 業務効率：<strong>日報内容を確認することで、仕事の進め方が明瞭化</strong></p>
                         </div>
-                        <div style="text-align:center; margin-top:50px; margin-bottom: 50px;"><a href="../index.html" class="back-btn">◀ 一覧に戻る</a></div>
+                        
+                        <div style="text-align:center; margin-top:50px; margin-bottom: 50px;">
+                            <a href="../index.html" class="back-btn">◀ 一覧に戻る</a>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
         </main>
     </div>
-    <script>document.addEventListener('DOMContentLoaded', function() {});</script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 詳細ページ用スクリプト（エラー防止用）
+    });
+    </script>
 </body>
 </html>
