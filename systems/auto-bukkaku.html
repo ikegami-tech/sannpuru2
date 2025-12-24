@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto物確 詳細 | TOHO HOUSE NEXT</title>
-    <link rel="stylesheet" href="../style.css"> <link rel="icon" href="../favicon.ico">      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>詳細ページ | TOHO HOUSE NEXT</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -12,14 +14,37 @@
         <aside class="sidebar">
             <div class="sidebar-header">
                 <h1 class="logo">
-                    <img src="../images/logo.png" alt="TOHO HOUSE NEXT">
+                    <a href="../index.html"><img src="../images/logo.png" alt="TOHO HOUSE NEXT"></a>
                 </h1>
             </div>
 
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="../index.html" class="tab-link active">← トップに戻る</a>
+                        <a href="#" class="tab-link active">稼働中のシステム</a>
+                        <ul class="submenu open">
+                            <li><a href="../index.html#sys-syslog">・シスろぐ</a></li>
+                            <li><a href="../index.html#sys-suumo">・SuumoQuick</a></li>
+                            <li><a href="../index.html#sys-multi">・MultiQuick</a></li>
+                            <li><a href="../index.html#sys-gps">・TohoGPS</a></li>
+                            <li><a href="../index.html#sys-recruit">・写真ダウンローダー</a></li>
+                            <li><a href="../index.html#sys-ppap">・PDF-PPAP</a></li>
+                            <li><a href="../index.html#sys-dec">・PDFdec</a></li>
+                            <li><a href="../index.html#sys-cutter">・PDFCutter</a></li>
+                            <li><a href="../index.html#sys-uploader">・東宝アップローダー</a></li>
+                            <li><a href="../index.html#sys-backup">・KASHIKA自動バックアップ</a></li>
+                            <li><a href="../index.html#sys-light">・PDF軽くなーる</a></li>
+                            <li><a href="../index.html#sys-summary">・KASHIKAデータ集計</a></li>
+                            <li><a href="../index.html#sys-voice">・コエキャッチ</a></li>
+                            <li><a href="../index.html#sys-bukkaku">・Auto物確</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="tab-link">開発検討中</a>
+                        <ul class="submenu open">
+                            <li><a href="../index.html#sys-ai-satei">・AI不動産査定エンジン</a></li>
+                            <li><a href="../index.html#sys-madori">・Auto間取り図</a></li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -37,9 +62,7 @@
         </aside>
 
         <main class="main-content">
-            
             <div class="container" style="padding-top: 40px;">
-                
                 <a href="../index.html" class="back-btn">◀ 一覧に戻る</a>
 
                 <div class="detail-view" style="display: block; margin-top: 20px;">
@@ -58,17 +81,13 @@
                         </div>
 
                         <h3>解決した課題</h3>
-                        <p>
-                            物件確認作業の遅れによる機会損失や、膨大な確認作業による業務負荷が課題でした。
-                        </p>
+                        <p>物件確認作業の遅れによる機会損失や、膨大な確認作業による業務負荷が課題でした。</p>
 
                         <h3>主な機能</h3>
                         <div class="feature-card-list">
                             <div class="feature-row">
                                 <h4 class="feature-head">物件確認の自動化</h4>
-                                <p class="feature-desc">
-                                    マルチユースから出力したCSVデータを基に、レインズ等での物件確認作業をロボットが自動で行います。
-                                </p>
+                                <p class="feature-desc">マルチユースから出力したCSVデータを基に、レインズ等での物件確認作業をロボットが自動で行います。</p>
                             </div>
                         </div>
 
@@ -86,9 +105,8 @@
                         <div style="text-align:center; margin-top:50px; margin-bottom: 50px;">
                             <a href="../index.html" class="back-btn">◀ 一覧に戻る</a>
                         </div>
-
                     </div>
-                </div>
+                    </div>
             </div>
         </main>
     </div>
@@ -98,8 +116,18 @@
         const tabLinks = document.querySelectorAll('.tab-link');
         tabLinks.forEach(link => {
             link.addEventListener('click', function(e) {
-                // 詳細ページでは「トップに戻る」リンクのみなので、特有の処理は不要ですが
-                // エラー防止のために基本スクリプトを残しておきます
+                // 通常のリンク移動はそのまま実行
+                if (this.getAttribute('href').includes('.html')) {
+                    return;
+                }
+                // メニュー開閉処理
+                e.preventDefault();
+                const parentLi = this.closest('li');
+                const submenu = parentLi.querySelector('.submenu');
+                if (submenu) {
+                    submenu.classList.toggle('open');
+                    this.classList.toggle('active');
+                }
             });
         });
     });
