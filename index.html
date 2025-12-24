@@ -405,56 +405,59 @@
         const tabLinks = document.querySelectorAll('.tab-link');
         const sections = document.querySelectorAll('.section');
 
-        // --- 共通関数：タブとメニューをアクティブにする ---
-        function activateTab(linkElement) {
-            const targetId = linkElement.getAttribute('data-target');
-
-            // 1. 右側の画面切り替え
-            sections.forEach(sec => {
-                sec.style.display = 'none';
-                sec.classList.remove('active');
-            });
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.style.display = 'block';
-                setTimeout(() => targetSection.classList.add('active'), 10);
-            }
-
-            // 2. 左メニューの開閉（他を閉じる）
-            document.querySelectorAll('.submenu').forEach(sub => sub.classList.remove('open'));
-            document.querySelectorAll('.tab-link').forEach(tab => {
-                tab.classList.remove('menu-open');
-                tab.classList.remove('active');
-            });
-
-            // クリックされたタブのサブメニューを開く
-            const parentLi = linkElement.closest('li');
-            const submenu = parentLi.querySelector('.submenu');
-            if (submenu) {
-                submenu.classList.add('open');
-            }
-            
-            // 自分をアクティブにする
-            linkElement.classList.add('active');
-            linkElement.classList.add('menu-open');
-
-            // 状態を記憶
-            sessionStorage.setItem('activeTabId', targetId);
-        }
-
-        // --- A. タブクリック時 ---
+        // --- タブクリック時の動作（開閉トグル機能付き） ---
         tabLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                activateTab(this);
+                const targetId = this.getAttribute('data-target');
+
+                // ▼ 1. サブメニューの開閉状態を判定
+                const parentLi = this.closest('li');
+                const submenu = parentLi.querySelector('.submenu');
+                
+                // 「今クリックしたメニューがすでに開いているか？」をチェック
+                const isAlreadyOpen = submenu && submenu.classList.contains('open');
+
+                // ▼ 2. 一旦すべてのメニューを閉じる（リセット）
+                document.querySelectorAll('.submenu').forEach(sub => sub.classList.remove('open'));
+                document.querySelectorAll('.tab-link').forEach(tab => {
+                    tab.classList.remove('menu-open');
+                    tab.classList.remove('active');
+                });
+
+                // ▼ 3. クリックされた場所を「アクティブ」にする
+                this.classList.add('active');
+
+                // ▼ 4. トグル処理
+                // 「開いていなかった場合」のみ開く。（開いていた場合は手順2で閉じたままにする＝閉じる動作）
+                if (submenu && !isAlreadyOpen) {
+                    submenu.classList.add('open');
+                    this.classList.add('menu-open');
+                }
+
+                // ▼ 5. 右側の画面切り替え（画面は常に表示する）
+                if (targetId) {
+                    sections.forEach(sec => {
+                        sec.style.display = 'none';
+                        sec.classList.remove('active');
+                    });
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                        setTimeout(() => targetSection.classList.add('active'), 10);
+                    }
+                    // 状態を記憶
+                    sessionStorage.setItem('activeTabId', targetId);
+                }
             });
         });
 
-        // --- B. サブメニュークリック時 ---
+        // --- サブメニューのリンククリック時（スムーズスクロール） ---
         const subLinks = document.querySelectorAll('.submenu a');
         subLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
+                // リンク先へスクロール
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
@@ -466,18 +469,36 @@
             });
         });
 
-        // --- C. ページ読み込み時の復元 ---
+        // --- ページ読み込み時の初期表示（記憶したタブを開く） ---
         const savedTabId = sessionStorage.getItem('activeTabId');
         let initialTab = null;
 
         if (savedTabId) {
             initialTab = document.querySelector(`.tab-link[data-target="${savedTabId}"]`);
         }
+        // 記憶がない、または要素がない場合は「稼働中のシステム」をデフォルトにする
         if (!initialTab) {
             initialTab = document.querySelector('.tab-link[data-target="released"]');
         }
+
+        // 初期ロード時は「強制的に開く」状態にする
         if (initialTab) {
-            activateTab(initialTab);
+            const targetId = initialTab.getAttribute('data-target');
+            
+            // 画面表示
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                setTimeout(() => targetSection.classList.add('active'), 10);
+            }
+            
+            // メニューを開く
+            const parentLi = initialTab.closest('li');
+            const submenu = parentLi.querySelector('.submenu');
+            if (submenu) submenu.classList.add('open');
+            
+            initialTab.classList.add('active');
+            initialTab.classList.add('menu-open');
         }
     });
     </script>
