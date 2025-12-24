@@ -8,45 +8,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper" style="display: block;"> 
-        <main class="main-content" style="margin-left: 0; width: 100%;">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo"><img src="../images/logo.png" alt="TOHO HOUSE NEXT"></h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul><li><a href="../index.html" class="tab-link active">← トップに戻る</a></li></ul>
+            </nav>
+            <div class="sidebar-contact">
+                <p class="sc-label">システムに関するご相談</p>
+                <div class="sc-number"><span class="sc-icon">📞</span> 内線 03-4330-4444</div>
+            </div>
+            <div class="sidebar-footer"><p>&copy; TOHO HOUSE NEXT</p></div>
+        </aside>
+
+        <main class="main-content">
             <div class="container" style="padding-top: 40px;">
                 <a href="../index.html" class="back-btn">◀ 一覧に戻る</a>
 
                 <div class="detail-view" style="display: block; margin-top: 20px;">
                     <div class="detail-header">
-                        <span class="detail-category">開発時期：2024年</span>
+                        <span class="detail-category">Webツール</span>
                         <h2 class="detail-title">東宝アップローダー</h2>
-                        <div class="detail-meta">
-                            <span>利用者：練馬、王子</span>
-                        </div>
+                        <div class="detail-meta"><span>📅 稼働開始：2024年</span></div>
                     </div>
 
                     <div class="detail-body">
                         <div class="feature-img-box">
-                            <img src="../images/logo.png" alt="東宝アップローダー画面">
+                            <img src="../images/logo.png" alt="アップローダー画面">
                         </div>
 
                         <h3>解決した課題</h3>
-                        <p>メールでのファイル送付によるセキュリティ不安や、相手がいつデータを確認したかが不明確という課題がありました。</p>
+                        <p>メール添付ではセキュリティに不安があり、かつ「お客様がいつ資料を見たか」が分からず、営業の追客タイミングが掴めない課題がありました。</p>
 
                         <h3>主な機能</h3>
                         <div class="feature-card-list">
                             <div class="feature-row">
-                                <h4 class="feature-head">アクセス追跡付きファイル共有</h4>
-                                <p class="feature-desc">ファイルをアップロードしてURL化し、相手がアクセスした日時と回数を閲覧できるブラウザソフトです。</p>
+                                <h4 class="feature-head">セキュアなファイル共有</h4>
+                                <p class="feature-desc">専用URLを発行してファイルを送付。ダウンロード期限やパスワードも設定可能です。</p>
+                            </div>
+                            <div class="feature-row">
+                                <h4 class="feature-head">アクセスログ追跡</h4>
+                                <p class="feature-desc">お客様がファイルを開封した瞬間に担当者へ通知が届きます。</p>
                             </div>
                         </div>
 
                         <h3>導入効果</h3>
                         <div class="effect-box">
-                            <p>🔒 <strong>セキュリティの向上</strong></p>
-                            <p>📈 <strong>顧客の閲覧状況把握による営業力の向上</strong></p>
-                        </div>
-
-                        <div style="margin-top: 30px; background: #f9f9f9; padding: 15px; border-radius: 8px; font-size: 0.9rem;">
-                            <strong>備考：</strong><br>
-                            町田か品川の方が作成していたソフトのセキュリティ強化版として開発しました。
+                            <p>👁️ <strong>お客様の興味レベルを可視化（営業力向上）</strong></p>
+                            <p>🔒 <strong>脱PPAPによるセキュリティ向上</strong></p>
                         </div>
                         
                         <div style="text-align:center; margin-top:50px; margin-bottom: 50px;">
