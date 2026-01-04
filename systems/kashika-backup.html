@@ -10,17 +10,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <aside class="sidebar">
-            <div class="sidebar-header"><h1 class="logo"><a href="../index.html"><img src="../images/logo.png" alt="TOHO HOUSE NEXT"></a></h1></div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="#" class="tab-link active">稼働中のシステム</a><ul class="submenu open"><li><a href="../index.html#sys-syslog">・シスろぐ</a></li><li><a href="../index.html#sys-suumo">・SuumoQuick</a></li><li><a href="../index.html#sys-multi">・MultiQuick</a></li><li><a href="../index.html#sys-gps">・TohoGPS</a></li><li><a href="../index.html#sys-recruit">・写真ダウンローダー</a></li><li><a href="../index.html#sys-ppap">・PDF-PPAP</a></li><li><a href="../index.html#sys-dec">・PDFdec</a></li><li><a href="../index.html#sys-cutter">・PDFCutter</a></li><li><a href="../index.html#sys-uploader">・東宝アップローダー</a></li><li><a href="../index.html#sys-backup">・KASHIKA自動バックアップ</a></li><li><a href="../index.html#sys-light">・PDF軽くなーる</a></li><li><a href="../index.html#sys-summary">・KASHIKAデータ集計</a></li><li><a href="../index.html#sys-voice">・コエキャッチ</a></li><li><a href="../index.html#sys-bukkaku">・Auto物確</a></li></ul></li>
-                    <li><a href="#" class="tab-link">開発検討中</a><ul class="submenu open"><li><a href="../index.html#sys-ai-satei">・AI不動産査定エンジン</a></li><li><a href="../index.html#sys-madori">・Auto間取り図</a></li></ul></li>
-                </ul>
-            </nav>
-            <div class="sidebar-contact"><p class="sc-label">システムに関するご相談</p><div class="sc-number"><span class="sc-icon">📞</span> 外線 03-4330-4444</div></div>
-            <div class="sidebar-footer"><p>&copy; TOHO HOUSE NEXT</p></div>
-        </aside>
+        <script src="common_sidebar.js"></script>
         <main class="main-content">
             <div class="container" style="padding-top: 40px;">
                 <a href="../index.html" class="back-btn">◀ 一覧に戻る</a>
@@ -28,14 +18,18 @@
                     <div class="detail-header"><span class="detail-category">管理ツール</span><h2 class="detail-title">KASHIKA自動バックアップ</h2><div class="detail-meta"><span>📅 稼働開始：2025年</span></div></div>
                     <div class="detail-body">
                         <div class="feature-img-box"><img src="../images/logo.png" alt="バックアップツール画面"></div>
-                        <h3>解決した課題</h3><p>誤操作による担当営業の一括更新などの事故リスク。</p>
-                        <h3>導入効果</h3><div class="effect-box"><p>🛡️ <strong>データの自動バックアップにより、事故後の復元が可能に。</strong></p></div>
+                        <h3>解決した課題</h3><p>顧客管理システム(KASHIKA)において、誤操作で担当営業を一括変更してしまうなどの事故リスクがあり、データの保全が急務でした。</p>
+                        <h3>主な機能</h3>
+                        <div class="feature-card-list">
+                            <div class="feature-row"><h4 class="feature-head">定期自動バックアップ</h4><p class="feature-desc">毎朝、全顧客データを自動で取得し、別サーバーへ安全に保管します。</p></div>
+                        </div>
+                        <h3>導入効果</h3><div class="effect-box"><p>🛡️ <strong>万が一の操作ミスでも直前の状態に復元可能</strong></p></div>
                         <div style="text-align:center; margin-top:50px; margin-bottom: 50px;"><a href="../index.html" class="back-btn">◀ 一覧に戻る</a></div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    <script>document.addEventListener('DOMContentLoaded',function(){const e=document.querySelectorAll(".tab-link");e.forEach(e=>{e.addEventListener("click",function(e){if(this.getAttribute("href").includes(".html"))return;e.preventDefault();const t=this.closest("li").querySelector(".submenu");t&&(t.classList.toggle("open"),this.classList.toggle("active"))})})});</script>
+    <script>document.addEventListener('DOMContentLoaded', function() {});</script>
 </body>
 </html>
